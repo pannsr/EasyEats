@@ -10,7 +10,7 @@ const Home = () => {
   const [products, setProducts] = useState(following);
   const {assets, colors, fonts, gradients, sizes} = useTheme();
 
-  const handleProducts = useCallback(
+  const handleButtonToggle = useCallback(
     (tab: number) => {
       setTab(tab);
       setProducts(tab === 0 ? following : trending);
@@ -33,8 +33,12 @@ const Home = () => {
         justify="center"
         color={colors.card}
         paddingBottom={sizes.sm}>
-        <Button onPress={() => handleProducts(0)}>
+
+        {/* Following button */}
+        <Button onPress={() => handleButtonToggle(0)}>
           <Block row align="center">
+
+            {/* Following Image */}
             <Block
               flex={0}
               radius={6}
@@ -46,11 +50,16 @@ const Home = () => {
               gradient={gradients?.[tab === 0 ? 'primary' : 'secondary']}>
               <Image source={assets.extras} color={colors.white} radius={0} />
             </Block>
+
+            {/* Following Text */}
             <Text p font={fonts?.[tab === 0 ? 'medium' : 'normal']}>
               {t('home.following')}
             </Text>
+
           </Block>
         </Button>
+
+        {/* Line in between two buttons */}
         <Block
           gray
           flex={0}
@@ -58,8 +67,12 @@ const Home = () => {
           marginHorizontal={sizes.sm}
           height={sizes.socialIconSize}
         />
-        <Button onPress={() => handleProducts(1)}>
+        
+        {/* Trending button */}
+        <Button onPress={() => handleButtonToggle(1)}>
           <Block row align="center">
+
+            {/* Trending image */}
             <Block
               flex={0}
               radius={6}
@@ -75,9 +88,12 @@ const Home = () => {
                 source={assets.documentation}
               />
             </Block>
+
+            {/* Trending text */}
             <Text p font={fonts?.[tab === 1 ? 'medium' : 'normal']}>
               {t('home.trending')}
             </Text>
+
           </Block>
         </Button>
       </Block>
@@ -90,6 +106,7 @@ const Home = () => {
         contentContainerStyle={{paddingBottom: sizes.l}}>
         <Block row wrap="wrap" justify="space-between" marginTop={sizes.sm}>
           {products?.map((product) => (
+            /* Uses the Product component from components/Product.tsx */
             <Product {...product} key={`card-${product?.id}`} />
           ))}
         </Block>
