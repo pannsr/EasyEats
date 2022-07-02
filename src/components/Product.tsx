@@ -4,12 +4,15 @@ import {TouchableOpacity} from 'react-native';
 import Block from './Block';
 import Image from './Image';
 import Text from './Text';
-import {IProduct} from '../constants/types';
+import {IRestaurant} from '../constants/types';
 import {useTheme, useTranslation} from '../hooks/';
+import { NavigationContainer } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
-const Product = ({image, title, type, linkLabel}: IProduct) => {
+const Product = ({image, title, type, linkLabel, description, timestamp}: IRestaurant) => {
   const {t} = useTranslation();
   const {assets, colors, sizes} = useTheme();
+  const navigation = useNavigation();
 
   const isHorizontal = type !== 'vertical';
   const CARD_WIDTH = (sizes.width - sizes.padding * 2 - sizes.sm) / 2;
@@ -34,18 +37,23 @@ const Product = ({image, title, type, linkLabel}: IProduct) => {
       
       {/* Everything apart from image */}
       <Block
-        paddingTop={sizes.s}
+        paddingVertical={sizes.m}
         justify="space-between"
         paddingLeft={isHorizontal ? sizes.sm : 0}
         paddingBottom={isHorizontal ? sizes.s : 0}>
 
         {/* Title text */}
-        <Text p marginBottom={sizes.s}>
+        <Text p marginTop={sizes.s}>
           {title}
         </Text>
 
-        {/* Read Article (Text and arrow) */}
-        <TouchableOpacity>
+        {/* Select restaurant (Text and arrow) */}
+        <TouchableOpacity 
+          onPress = {() => 
+            navigation.navigate('Screens', {
+              screen: 'Branch'
+            })
+          }>
           <Block row flex={0} align="center">
             {/* This is the text */}
             <Text
@@ -53,9 +61,10 @@ const Product = ({image, title, type, linkLabel}: IProduct) => {
               color={colors.link}
               semibold
               size={sizes.linkSize}
-              marginRight={sizes.s}>
+              marginRight={sizes.s}
+            >
               {linkLabel || t('common.readArticle')}
-            </Text>
+            </Text >
             {/* This is the arrow */}
             <Image source={assets.arrow} color={colors.link} /> 
           </Block>

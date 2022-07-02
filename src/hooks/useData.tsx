@@ -4,7 +4,7 @@ import Storage from '@react-native-async-storage/async-storage';
 import {
   IArticle,
   ICategory,
-  IProduct,
+  IRestaurant,
   IUser,
   IUseData,
   ITheme,
@@ -12,8 +12,7 @@ import {
 
 import {
   USERS,
-  FOLLOWING,
-  TRENDING,
+  MAIN_RESTAURANTS,
   CATEGORIES,
   ARTICLES,
 } from '../constants/mocks';
@@ -26,8 +25,7 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
   const [theme, setTheme] = useState<ITheme>(light);
   const [user, setUser] = useState<IUser>(USERS[0]);
   const [users, setUsers] = useState<IUser[]>(USERS);
-  const [following, setFollowing] = useState<IProduct[]>(FOLLOWING);
-  const [trending, setTrending] = useState<IProduct[]>(TRENDING);
+  const [mainRestaurants, setMainRestaurants] = useState<IRestaurant[]>(MAIN_RESTAURANTS);
   const [categories, setCategories] = useState<ICategory[]>(CATEGORIES);
   const [articles, setArticles] = useState<IArticle[]>(ARTICLES);
   const [article, setArticle] = useState<IArticle>({});
@@ -106,10 +104,8 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
     users,
     handleUsers,
     handleUser,
-    following,
-    setFollowing,
-    trending,
-    setTrending,
+    mainRestaurants,
+    setMainRestaurants,
     categories,
     setCategories,
     articles,

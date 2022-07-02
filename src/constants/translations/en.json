@@ -40,7 +40,7 @@
     "outStock": "Out of stock",
     "addToCart": "Add to cart",
     "checkout": "Proceed to checkout",
-    "readArticle": "Read Article",
+    "readArticle": "Select Restaurant",
     "send": "Send",
     "guests": {
       "one": "1 guest",
@@ -57,6 +57,7 @@
   "darkMode": "Dark Mode",
   "screens": {
     "home": "Home",
+    "branch": "Hello",
     "components": "Components",
     "articles": "Articles",
     "rental": "Rental",
@@ -66,7 +67,8 @@
     "extra": "Extra - Automotive"
   },
   "navigation": {
-    "home": "Soft UI",
+    "home": "EasyEats",
+    "branch": "Select a branch and table number",
     "components": "Components",
     "articles": "Soft UI",
     "rentals": "Soft UI",
@@ -90,8 +92,6 @@
   },
   "home": {
     "title": "Soft UI",
-    "following": "Following",
-    "trending": "Trending"
   },
   "register": {
     "title": "Welcome",

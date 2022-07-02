@@ -58,7 +58,7 @@ export const ICONS: ThemeIcons = {
   notification: require('../assets/icons/notification.png'),
   office: require('../assets/icons/office.png'),
   payment: require('../assets/icons/payment.png'),
-  profile: require('../assets/icons/profile.png'),
+  profile: require('../assets/icons/user-solid.png'),
   register: require('../assets/icons/register.png'),
   rental: require('../assets/icons/rental.png'),
   search: require('../assets/icons/search.png'),

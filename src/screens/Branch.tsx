@@ -3,7 +3,7 @@ import React, {useCallback, useState} from 'react';
 import {useData, useTheme, useTranslation} from '../hooks/';
 import {Block, Button, Image, Input, Product, Text} from '../components/';
 
-const Home = () => {
+const Branch = () => {
   const {t} = useTranslation();
   const [tab, setTab] = useState<number>(0);
   const {mainRestaurants} = useData();
@@ -12,11 +12,6 @@ const Home = () => {
 
   return (
     <Block>
-      {/* search input */}
-      <Block color={colors.card} flex={0} padding={sizes.padding}>
-        <Input search placeholder={t('common.search')} />
-      </Block>
-
       {/* products list */}
       <Block
         scroll
@@ -34,4 +29,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Branch;
