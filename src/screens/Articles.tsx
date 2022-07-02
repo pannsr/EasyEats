@@ -66,6 +66,7 @@ const Articles = () => {
         </Block>
       </Block>
 
+      {/* All the articles */}
       <FlatList
         data={articles}
         showsVerticalScrollIndicator={false}

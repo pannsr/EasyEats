@@ -22,7 +22,6 @@ interface IRegistrationValidation {
 }
 
 const Register = () => {
-  const {isDark} = useData();
   const {t} = useTranslation();
   const navigation = useNavigation();
   const [isValid, setIsValid] = useState<IRegistrationValidation>({
@@ -127,7 +126,6 @@ const Register = () => {
                     source={assets.facebook}
                     height={sizes.m}
                     width={sizes.m}
-                    color={isDark ? colors.icon : undefined}
                   />
                 </Button>
                 <Button outlined gray shadow={!isAndroid}>
@@ -135,7 +133,6 @@ const Register = () => {
                     source={assets.apple}
                     height={sizes.m}
                     width={sizes.m}
-                    color={isDark ? colors.icon : undefined}
                   />
                 </Button>
                 <Button outlined gray shadow={!isAndroid}>
@@ -143,7 +140,6 @@ const Register = () => {
                     source={assets.google}
                     height={sizes.m}
                     width={sizes.m}
-                    color={isDark ? colors.icon : undefined}
                   />
                 </Button>
               </Block>
