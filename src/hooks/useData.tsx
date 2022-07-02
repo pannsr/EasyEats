@@ -4,7 +4,7 @@ import Storage from '@react-native-async-storage/async-storage';
 import {
   IArticle,
   ICategory,
-  IProduct,
+  IRestaurant,
   IUser,
   IUseData,
   ITheme,
@@ -25,7 +25,7 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
   const [theme, setTheme] = useState<ITheme>(light);
   const [user, setUser] = useState<IUser>(USERS[0]);
   const [users, setUsers] = useState<IUser[]>(USERS);
-  const [mainRestaurants, setMainRestaurants] = useState<IProduct[]>(MAIN_RESTAURANTS);
+  const [mainRestaurants, setMainRestaurants] = useState<IRestaurant[]>(MAIN_RESTAURANTS);
   const [categories, setCategories] = useState<ICategory[]>(CATEGORIES);
   const [articles, setArticles] = useState<IArticle[]>(ARTICLES);
   const [article, setArticle] = useState<IArticle>({});

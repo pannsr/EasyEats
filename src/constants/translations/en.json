@@ -57,6 +57,7 @@
   "darkMode": "Dark Mode",
   "screens": {
     "home": "Home",
+    "branch": "Hello",
     "components": "Components",
     "articles": "Articles",
     "rental": "Rental",
@@ -67,6 +68,7 @@
   },
   "navigation": {
     "home": "EasyEats",
+    "branch": "Select a branch and table number",
     "components": "Components",
     "articles": "Soft UI",
     "rentals": "Soft UI",

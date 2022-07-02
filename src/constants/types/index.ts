@@ -39,13 +39,13 @@ export interface IArticle {
   location?: ILocation;
   rating?: number;
   user?: IUser;
-  offers?: IProduct[];
+  offers?: IRestaurant[];
   options?: IArticleOptions[];
   timestamp?: number;
   onPress?: (event?: any) => void;
 }
 
-export interface IProduct {
+export interface IRestaurant {
   id?: number;
   title?: string;
   description?: string;
@@ -70,8 +70,8 @@ export interface IUseData {
   handleUsers: (data?: IUser[]) => void;
   basket: IBasket;
   handleBasket: (data?: IBasket) => void;
-  mainRestaurants: IProduct[];
-  setMainRestaurants: (data?: IProduct[]) => void;
+  mainRestaurants: IRestaurant[];
+  setMainRestaurants: (data?: IRestaurant[]) => void;
   categories: ICategory[];
   setCategories: (data?: ICategory[]) => void;
   recommendations: IArticle[];

@@ -16,6 +16,7 @@ import Text from '../components/Text';
 import useTheme from '../hooks/useTheme';
 import Button from '../components/Button';
 import Block from '../components/Block';
+import { shouldUseActivityState } from 'react-native-screens';
 
 
 
@@ -50,7 +51,7 @@ export default () => {
               screen: 'Profile',
             })
           }>
-          <Image source={icons.profile} radius={1} color={colors.icon} avatar={true}/>
+          <Image source={icons.profile} radius={1}/>
         </TouchableOpacity>
       </Block>
     ),

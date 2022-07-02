@@ -8,7 +8,7 @@ import {
   IExtra,
   ILocation,
   INotification,
-  IProduct,
+  IRestaurant,
   IUser,
 } from './types';
 
@@ -83,7 +83,7 @@ export const USERS: IUser[] = [
 ];
 
 // main restaurants cards
-export const MAIN_RESTAURANTS: IProduct[] = [
+export const MAIN_RESTAURANTS: IRestaurant[] = [
   {
     id: 1,
     type: 'horizontal',
@@ -166,7 +166,7 @@ export const ARTICLE_OPTIONS: IArticleOptions[] = [
 ];
 
 // offers
-export const OFFERS: IProduct[] = [
+export const OFFERS: IRestaurant[] = [
   {
     id: 1,
     type: 'vertical',
