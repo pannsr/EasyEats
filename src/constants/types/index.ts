@@ -70,8 +70,8 @@ export interface IUseData {
   handleUsers: (data?: IUser[]) => void;
   basket: IBasket;
   handleBasket: (data?: IBasket) => void;
-  following: IProduct[];
-  setFollowing: (data?: IProduct[]) => void;
+  mainRestaurants: IProduct[];
+  setMainRestaurants: (data?: IProduct[]) => void;
   categories: ICategory[];
   setCategories: (data?: ICategory[]) => void;
   recommendations: IArticle[];

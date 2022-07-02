@@ -6,8 +6,8 @@ import {Block, Button, Image, Input, Product, Text} from '../components/';
 const Home = () => {
   const {t} = useTranslation();
   const [tab, setTab] = useState<number>(0);
-  const {following} = useData();
-  const [products, setProducts] = useState(following);
+  const {mainRestaurants} = useData();
+  const [products, setProducts] = useState(mainRestaurants);
   const {assets, colors, fonts, gradients, sizes} = useTheme();
 
   return (

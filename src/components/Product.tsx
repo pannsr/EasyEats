@@ -7,7 +7,7 @@ import Text from './Text';
 import {IProduct} from '../constants/types';
 import {useTheme, useTranslation} from '../hooks/';
 
-const Product = ({image, title, type, linkLabel}: IProduct) => {
+const Product = ({image, title, type, linkLabel, description, timestamp}: IProduct) => {
   const {t} = useTranslation();
   const {assets, colors, sizes} = useTheme();
 
@@ -34,13 +34,13 @@ const Product = ({image, title, type, linkLabel}: IProduct) => {
       
       {/* Everything apart from image */}
       <Block
-        paddingTop={sizes.s}
+        paddingVertical={sizes.m}
         justify="space-between"
         paddingLeft={isHorizontal ? sizes.sm : 0}
         paddingBottom={isHorizontal ? sizes.s : 0}>
 
         {/* Title text */}
-        <Text p marginBottom={sizes.s}>
+        <Text p marginTop={sizes.s}>
           {title}
         </Text>
 

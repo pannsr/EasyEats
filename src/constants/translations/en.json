@@ -40,7 +40,7 @@
     "outStock": "Out of stock",
     "addToCart": "Add to cart",
     "checkout": "Proceed to checkout",
-    "readArticle": "Read Article",
+    "readArticle": "Select Restaurant",
     "send": "Send",
     "guests": {
       "one": "1 guest",
@@ -90,7 +90,6 @@
   },
   "home": {
     "title": "Soft UI",
-    "following": "Following"
   },
   "register": {
     "title": "Welcome",
