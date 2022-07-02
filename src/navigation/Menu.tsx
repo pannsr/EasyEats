@@ -101,6 +101,8 @@ const DrawerContent = (
       renderToHardwareTextureAndroid
       contentContainerStyle={{paddingBottom: sizes.padding}}>
       <Block paddingHorizontal={sizes.padding}>
+
+        {/* Soft UI React Native Block */}
         <Block flex={0} row align="center" marginBottom={sizes.l}>
           <Image
             radius={0}
@@ -153,6 +155,7 @@ const DrawerContent = (
           );
         })}
 
+        {/* Horizontal line in bottom of menu */}
         <Block
           flex={0}
           height={1}
@@ -161,39 +164,6 @@ const DrawerContent = (
           gradient={gradients.menu}
         />
 
-        <Text semibold transform="uppercase" opacity={0.5}>
-          {t('menu.documentation')}
-        </Text>
-
-        <Button
-          row
-          justify="flex-start"
-          marginTop={sizes.sm}
-          marginBottom={sizes.s}
-          onPress={() =>
-            handleWebLink('https://github.com/creativetimofficial')
-          }>
-          <Block
-            flex={0}
-            radius={6}
-            align="center"
-            justify="center"
-            width={sizes.md}
-            height={sizes.md}
-            marginRight={sizes.s}
-            gradient={gradients.white}>
-            <Image
-              radius={0}
-              width={14}
-              height={14}
-              color={colors.black}
-              source={assets.documentation}
-            />
-          </Block>
-          <Text p color={labelColor}>
-            {t('menu.started')}
-          </Text>
-        </Button>
       </Block>
     </DrawerContentScrollView>
   );

@@ -14,6 +14,7 @@ const Articles = () => {
 
   // init articles
   useEffect(() => {
+    // THIS sets what articles (specific text and image) it displays
     setArticles(data?.articles);
     setCategories(data?.categories);
     setSelected(data?.categories[0]);

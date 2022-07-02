@@ -2,7 +2,7 @@ import React from 'react';
 import {TouchableOpacity} from 'react-native';
 import {
   StackHeaderTitleProps,
-  CardStyleInterpolators,
+  CardStyleInterpolators
 } from '@react-navigation/stack';
 import {useNavigation} from '@react-navigation/core';
 import {DrawerActions} from '@react-navigation/native';
@@ -16,6 +16,8 @@ import Text from '../components/Text';
 import useTheme from '../hooks/useTheme';
 import Button from '../components/Button';
 import Block from '../components/Block';
+
+
 
 export default () => {
   const {t} = useTranslation();
@@ -33,6 +35,7 @@ export default () => {
     headerTitle: ({children}: StackHeaderTitleProps) => (
       <Text p>{children}</Text>
     ),
+    /* the three side bar icon, get rid if no navigation needed */
     headerLeft: () => (
       <Button onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
         <Image source={icons.menu} radius={0} color={colors.icon} />
@@ -40,46 +43,14 @@ export default () => {
     ),
     headerRight: () => (
       <Block row flex={0} align="center" marginRight={sizes.padding}>
-        <TouchableOpacity
-          style={{marginRight: sizes.sm}}
-          onPress={() =>
-            navigation.navigate('Screens', {
-              screen: 'Pro',
-            })
-          }>
-          <Image source={icons.bell} radius={0} color={colors.icon} />
-          <Block
-            flex={0}
-            right={0}
-            width={sizes.s}
-            height={sizes.s}
-            radius={sizes.xs}
-            position="absolute"
-            gradient={gradients?.primary}
-          />
-        </TouchableOpacity>
+        {/* Profile icon in header */}
         <TouchableOpacity
           onPress={() =>
             navigation.navigate('Screens', {
-              screen: 'Pro',
+              screen: 'Profile',
             })
           }>
-          <Image source={icons.basket} radius={0} color={colors.icon} />
-          <Block
-            flex={0}
-            padding={0}
-            justify="center"
-            position="absolute"
-            top={-sizes.s}
-            right={-sizes.s}
-            width={sizes.sm}
-            height={sizes.sm}
-            radius={sizes.sm / 2}
-            gradient={gradients?.primary}>
-            <Text white center bold size={10} lineHeight={10} paddingTop={3}>
-              3
-            </Text>
-          </Block>
+          <Image source={icons.profile} radius={1} color={colors.icon} avatar={true}/>
         </TouchableOpacity>
       </Block>
     ),

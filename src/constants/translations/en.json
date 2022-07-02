@@ -66,7 +66,7 @@
     "extra": "Extra - Automotive"
   },
   "navigation": {
-    "home": "Soft UI",
+    "home": "EasyEats",
     "components": "Components",
     "articles": "Soft UI",
     "rentals": "Soft UI",
@@ -90,8 +90,7 @@
   },
   "home": {
     "title": "Soft UI",
-    "following": "Following",
-    "trending": "Trending"
+    "following": "Following"
   },
   "register": {
     "title": "Welcome",

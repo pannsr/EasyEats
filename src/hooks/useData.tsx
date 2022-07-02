@@ -13,7 +13,6 @@ import {
 import {
   USERS,
   FOLLOWING,
-  TRENDING,
   CATEGORIES,
   ARTICLES,
 } from '../constants/mocks';
@@ -27,7 +26,6 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
   const [user, setUser] = useState<IUser>(USERS[0]);
   const [users, setUsers] = useState<IUser[]>(USERS);
   const [following, setFollowing] = useState<IProduct[]>(FOLLOWING);
-  const [trending, setTrending] = useState<IProduct[]>(TRENDING);
   const [categories, setCategories] = useState<ICategory[]>(CATEGORIES);
   const [articles, setArticles] = useState<IArticle[]>(ARTICLES);
   const [article, setArticle] = useState<IArticle>({});
@@ -108,8 +106,6 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
     handleUser,
     following,
     setFollowing,
-    trending,
-    setTrending,
     categories,
     setCategories,
     articles,
