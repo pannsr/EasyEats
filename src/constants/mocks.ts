@@ -87,21 +87,24 @@ export const USERS: IUser[] = [
 export const BRANCHES: IBranch[] = [
   {
     id: 1,
-    title: 'Branch 1',
+    title: 'Sukhumvit Branch',
     description: 'Best branch for good food',
-    type: 'vertical'
+    type: 'vertical',
+    numTable: 20
   },
   {
     id: 2,
-    title: 'Branch 2',
+    title: 'Viphavadhi Branch',
     description: 'Best branch for good view',
-    type: 'vertical'
+    type: 'vertical',
+    numTable: 15
   },
   {
     id: 3,
-    title: 'Branch 3',
+    title: 'Bangna Branch',
     description: 'Best branch for good service',
-    type: 'vertical'
+    type: 'vertical',
+    numTable: 6
   }
 ]
 
