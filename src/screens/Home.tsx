@@ -3,10 +3,9 @@ import React, {useCallback, useState} from 'react';
 import {useData, useTheme, useTranslation} from '../hooks/';
 import {Block, Button, Image, Input, Product, Text} from '../components/';
 import { TouchableOpacity } from 'react-native';
-import SearchBar from "react-native-dynamic-search-bar";
 import { ICONS } from '../constants/theme';
-
 import { Searchbar } from 'react-native-paper';
+
 
 const Home = () => {
   const {t} = useTranslation();
@@ -23,6 +22,7 @@ const Home = () => {
   return (
     <Block>
       {/* search input */}
+
        <Searchbar
         placeholder="Search"
         onChangeText={onChangeSearch}
