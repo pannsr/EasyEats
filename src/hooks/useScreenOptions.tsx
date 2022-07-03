@@ -90,6 +90,27 @@ export default () => {
         </Button>
       ),
     },
+    cart:{
+      ...menu,
+      headerTitle: () => (
+        <Text p>
+          {t('navigation.cart')}
+        </Text>
+      ),
+      headerRight: () => null,
+      headerLeft: () => (
+        <Button onPress={() => navigation.goBack()}>
+          <Image
+            radius={0}
+            width={10}
+            height={18}
+            color={colors.icon}
+            source={icons.arrow}
+            transform={[{rotate: '180deg'}]}
+          />
+        </Button>
+      ),
+    },
     branch: {
       ...menu,
       headerTitle: () => (

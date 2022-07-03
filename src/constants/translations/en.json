@@ -1,5 +1,6 @@
 {
   "common": {
+    "edit": "Edit",
     "appDetails": "App Details",
     "appName": "App name",
     "appVersion": "App version",
@@ -83,6 +84,7 @@
     "notifications": "Notifications",
     "agreement": "User Agreement",
     "about": "About",
+    "cart": "Cart",
     "privacy": "Privacy",
     "register": "Register",
     "login": "Login",
