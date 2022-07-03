@@ -8,6 +8,7 @@ import {
   IExtra,
   ILocation,
   INotification,
+  IBranch,
   IRestaurant,
   IUser,
   IMenu,
@@ -82,6 +83,27 @@ export const USERS: IUser[] = [
       'https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?fit=crop&w=80&q=80',
   },
 ];
+
+export const BRANCHES: IBranch[] = [
+  {
+    id: 1,
+    title: 'Branch 1',
+    description: 'Best branch for good food',
+    type: 'vertical'
+  },
+  {
+    id: 2,
+    title: 'Branch 2',
+    description: 'Best branch for good view',
+    type: 'vertical'
+  },
+  {
+    id: 3,
+    title: 'Branch 3',
+    description: 'Best branch for good service',
+    type: 'vertical'
+  }
+]
 
 // main restaurants cards
 export const MAIN_RESTAURANTS: IRestaurant[] = [
@@ -728,6 +750,7 @@ export const NOTIFICATIONS: INotification[] = [
 
 export default {
   USERS,
+  BRANCHES,
   MAIN_RESTAURANTS,
   CATEGORIES,
   ARTICLES,

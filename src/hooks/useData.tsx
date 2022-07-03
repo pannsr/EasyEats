@@ -4,6 +4,7 @@ import Storage from '@react-native-async-storage/async-storage';
 import {
   IArticle,
   ICategory,
+  IBranch,
   IRestaurant,
   IUser,
   IUseData,
@@ -13,6 +14,7 @@ import {
 
 import {
   USERS,
+  BRANCHES,
   MAIN_RESTAURANTS,
   CATEGORIES,
   ARTICLES,
@@ -27,6 +29,7 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
   const [theme, setTheme] = useState<ITheme>(light);
   const [user, setUser] = useState<IUser>(USERS[0]);
   const [users, setUsers] = useState<IUser[]>(USERS);
+  const [branches, setBranches] = useState<IBranch[]>(BRANCHES);
   const [mainRestaurants, setMainRestaurants] = useState<IRestaurant[]>(MAIN_RESTAURANTS);
   const [menus, setMenus] = useState<IMenu[]>(MENUS);
   const [categories, setCategories] = useState<ICategory[]>(CATEGORIES);
@@ -107,6 +110,8 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
     users,
     handleUsers,
     handleUser,
+    branches,
+    setBranches,
     mainRestaurants,
     setMainRestaurants,
     categories,
