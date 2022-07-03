@@ -4,6 +4,7 @@ import {useData, useTheme, useTranslation} from '../hooks/';
 import {Block, Button, Image, Input, Product, Text} from '../components/';
 import { TouchableOpacity } from 'react-native';
 import { ICONS } from '../constants/theme';
+import { Searchbar } from 'react-native-paper';
 
 
 const Home = () => {
