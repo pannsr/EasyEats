@@ -2,7 +2,7 @@ import React, {useCallback, useContext, useEffect, useState} from 'react';
 import Storage from '@react-native-async-storage/async-storage';
 
 import {
-  IArticle,
+  IBlock,
   ICategory,
   IBranch,
   IRestaurant,
@@ -33,8 +33,8 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
   const [mainRestaurants, setMainRestaurants] = useState<IRestaurant[]>(MAIN_RESTAURANTS);
   const [menus, setMenus] = useState<IMenu[]>(MENUS);
   const [categories, setCategories] = useState<ICategory[]>(CATEGORIES);
-  const [articles, setArticles] = useState<IArticle[]>(ARTICLES);
-  const [article, setArticle] = useState<IArticle>({});
+  const [articles, setArticles] = useState<IBlock[]>(ARTICLES);
+  const [article, setArticle] = useState<IBlock>({});
 
   // get isDark mode from storage
   const getIsDark = useCallback(async () => {
@@ -82,7 +82,7 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
 
   // handle Article
   const handleArticle = useCallback(
-    (payload: IArticle) => {
+    (payload: IBlock) => {
       // set article / compare if has updated
       if (JSON.stringify(payload) !== JSON.stringify(article)) {
         setArticle(payload);
