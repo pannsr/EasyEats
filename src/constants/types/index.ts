@@ -30,18 +30,11 @@ export interface IArticleOptions {
   user?: IUser;
   image?: string;
 }
-export interface IArticle {
+export interface IBlock {
   id?: number;
-  title?: string;
-  description?: string;
-  category?: ICategory;
-  image?: string;
-  location?: ILocation;
-  rating?: number;
-  user?: IUser;
-  offers?: IRestaurant[];
-  options?: IArticleOptions[];
-  timestamp?: number;
+  foodQuantity?: number;
+  foodTitle?: string;
+  linkLabel?: string;
   onPress?: (event?: any) => void;
 }
 
@@ -94,14 +87,14 @@ export interface IUseData {
   setMainRestaurants: (data?: IRestaurant[]) => void;
   categories: ICategory[];
   setCategories: (data?: ICategory[]) => void;
-  recommendations: IArticle[];
-  setRecommendations: (data?: IArticle[]) => void;
-  articles: IArticle[];
-  setArticles: (data?: IArticle[]) => void;
+  recommendations: IBlock[];
+  setRecommendations: (data?: IBlock[]) => void;
+  articles: IBlock[];
+  setArticles: (data?: IBlock[]) => void;
   menus: IMenu[];
   setMenus: (data?: IMenu[]) => void;
-  article: IArticle;
-  handleArticle: (data?: IArticle) => void;
+  article: IBlock;
+  handleArticle: (data?: IBlock) => void;
   notifications: INotification[];
   handleNotifications: (data?: INotification[]) => void;
 }

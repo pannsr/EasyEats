@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import { timezone } from 'expo-localization';
 import {
-  IArticle,
+  IBlock,
   IArticleOptions,
   IBasket,
   ICategory,
@@ -304,202 +304,21 @@ export const LOCATIONS: ILocation[] = [
 ];
 
 // articles
-export const ARTICLES: IArticle[] = [
+export const ARTICLES: IBlock[] = [
   {
     id: 1,
-    title: 'Flexible office space means growth.',
-    description:
-      'Rather than worrying about switching offices every couple years, you can instead stay in the same location.',
-    category: CATEGORIES[0],
-    options: ARTICLE_OPTIONS,
-    image:
-      'https://images.unsplash.com/photo-1604998103924-89e012e5265a?fit=crop&w=450&q=80',
-    user: USERS[0],
-    timestamp: dayjs().unix(),
-  },
+    foodTitle: 'Food 1',
+    foodQuantity: 2
+  }, 
   {
     id: 2,
-    title: 'Global payments in a single integration.',
-    description:
-      'Rather than worrying about switching offices every couple years, you can instead stay.',
-    category: CATEGORIES[0],
-    options: ARTICLE_OPTIONS,
-    image:
-      'https://images.unsplash.com/photo-1563492065599-3520f775eeed?fit=crop&w=450&q=80',
-    user: USERS[1],
-    timestamp: dayjs().unix(),
-  },
+    foodTitle: 'Food 2',
+    foodQuantity: 3
+  }, 
   {
     id: 3,
-    title: 'Working with the latest technologies.',
-    description:
-      'Rather than worrying about switching offices every couple years, you can instead stay in the same location.',
-    category: CATEGORIES[0],
-    options: ARTICLE_OPTIONS,
-    image:
-      'https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?fit=crop&w=450&q=80',
-    user: USERS[2],
-    timestamp: dayjs().unix(),
-  },
-  {
-    id: 4,
-    title: 'Office space means growth.',
-    description:
-      'Rather than worrying about switching offices every couple years, you can instead stay in the same location.',
-    category: CATEGORIES[0],
-    options: ARTICLE_OPTIONS,
-    image:
-      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?fit=crop&w=450&q=80',
-    user: USERS[3],
-    timestamp: dayjs().unix(),
-  },
-  {
-    id: 5,
-    title: 'Office space means growth.',
-    description: `The mission of LinkedIn is simple: connect the world's professionals.`,
-    category: CATEGORIES[1],
-    options: ARTICLE_OPTIONS,
-    image:
-      'https://images.unsplash.com/photo-1596720426673-e4e14290f0cc?fit=crop&w=450&q=80',
-    user: USERS[4],
-    timestamp: dayjs().unix(),
-  },
-  {
-    id: 6,
-    title: 'Office space means growth.',
-    description:
-      'Rather than worrying about switching offices every couple years, you can instead stay in the same location.',
-    category: CATEGORIES[1],
-    options: ARTICLE_OPTIONS,
-    image:
-      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?fit=crop&w=450&q=80',
-    user: USERS[5],
-    timestamp: dayjs().unix(),
-  },
-  {
-    id: 7,
-    title: 'Office space means growth.',
-    description:
-      'Rather than worrying about switching offices every couple years, you can instead stay in the same location.',
-    category: CATEGORIES[1],
-    options: ARTICLE_OPTIONS,
-    image:
-      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?fit=crop&w=450&q=80',
-    user: USERS[6],
-    timestamp: dayjs().unix(),
-  },
-  {
-    id: 8,
-    title: 'Office space means growth.',
-    description:
-      'Rather than worrying about switching offices every couple years, you can instead stay in the same location.',
-    category: CATEGORIES[2],
-    options: ARTICLE_OPTIONS,
-    image:
-      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?fit=crop&w=450&q=80',
-    user: USERS[1],
-    timestamp: dayjs().unix(),
-  },
-  {
-    id: 9,
-    title: 'Office space means growth.',
-    description:
-      'Rather than worrying about switching offices every couple years, you can instead stay in the same location.',
-    category: CATEGORIES[2],
-    options: ARTICLE_OPTIONS,
-    image:
-      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?fit=crop&w=450&q=80',
-    user: USERS[5],
-    timestamp: dayjs().unix(),
-  },
-  {
-    id: 10,
-    title: 'Office space means growth.',
-    description:
-      'Rather than worrying about switching offices every couple years, you can instead stay in the same location.',
-    category: CATEGORIES[2],
-    options: ARTICLE_OPTIONS,
-    image:
-      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?fit=crop&w=450&q=80',
-    user: USERS[6],
-    timestamp: dayjs().unix(),
-  },
-  {
-    id: 11,
-    description:
-      'A great to stay in Paris without feeling you are in the city!',
-    category: CATEGORIES[3], // best deal
-    options: ARTICLE_OPTIONS,
-    image:
-      'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?fit=crop&w=450&q=80',
-    location: LOCATIONS[0],
-    rating: 4.9,
-    timestamp: dayjs().unix(),
-  },
-  {
-    id: 12,
-    description: 'Best Italy location in a bustling neighbourhood, 2 min.',
-    category: CATEGORIES[3], // best deal
-    options: ARTICLE_OPTIONS,
-    image:
-      'https://images.unsplash.com/photo-1529154036614-a60975f5c760?fit=crop&w=450&q=80',
-    location: LOCATIONS[1],
-    rating: 4.5,
-    timestamp: dayjs().unix(),
-  },
-  {
-    id: 13,
-    description:
-      'The most beautiful and complex UI Kits built by Creative Tim.',
-    category: CATEGORIES[3], // best deal
-    options: ARTICLE_OPTIONS,
-    image:
-      'https://images.unsplash.com/photo-1486299267070-83823f5448dd?fit=crop&w=450&q=80',
-    location: LOCATIONS[2],
-    rating: 4.8,
-    timestamp: dayjs().unix(),
-  },
-];
-
-// rental recommendations
-export const RECOMMENDATIONS: IArticle[] = [
-  {
-    id: 1,
-    description:
-      'A great to stay in Paris without feeling you are in the city!',
-    category: CATEGORIES[3], // best deal
-    options: ARTICLE_OPTIONS,
-    image:
-      'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?fit=crop&w=450&q=80',
-    location: LOCATIONS[0],
-    rating: 4.9,
-    offers: OFFERS,
-    timestamp: dayjs().unix(),
-  },
-  {
-    id: 2,
-    description: 'Best Italy location in a bustling neighbourhood, 2 min.',
-    category: CATEGORIES[3], // best deal
-    options: ARTICLE_OPTIONS,
-    image:
-      'https://images.unsplash.com/photo-1529154036614-a60975f5c760?fit=crop&w=450&q=80',
-    location: LOCATIONS[1],
-    rating: 4.5,
-    offers: OFFERS,
-    timestamp: dayjs().unix(),
-  },
-  {
-    id: 3,
-    description:
-      'The most beautiful and complex UI Kits built by Creative Tim.',
-    category: CATEGORIES[3], // best deal
-    options: ARTICLE_OPTIONS,
-    image:
-      'https://images.unsplash.com/photo-1486299267070-83823f5448dd?fit=crop&w=450&q=80',
-    location: LOCATIONS[2],
-    rating: 4.8,
-    offers: OFFERS,
-    timestamp: dayjs().unix(),
+    foodTitle: 'Food 2',
+    foodQuantity: 1
   },
 ];
 
@@ -754,7 +573,6 @@ export default {
   MAIN_RESTAURANTS,
   CATEGORIES,
   ARTICLES,
-  RECOMMENDATIONS,
   MESSSAGES,
   EXTRAS,
   NOTIFICATIONS,

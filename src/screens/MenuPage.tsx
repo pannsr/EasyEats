@@ -1,11 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList, TouchableOpacity} from 'react-native';
 
-import {useData, useTheme} from '../hooks/';
-import {IArticle, ICategory, IMenu} from '../constants/types';
-import {Block, Button, Article, Text, Menu, Image} from '../components/';
+import {useData, useTheme} from '../hooks';
+import {ICategory, IMenu} from '../constants/types';
+import {Block, Button, Article, Text, Menu, Image} from '../components';
+import {useNavigation} from '@react-navigation/core';
 
-const Articles = () => {
+const MenuPage = () => {
+  const navigation = useNavigation();
   const data = useData();
   const [selected, setSelected] = useState<ICategory>();
   const [categories, setCategories] = useState<ICategory[]>([]);
@@ -35,7 +37,7 @@ const Articles = () => {
 
   return (
     <Block>
-      {/* Floating QR Button */}
+      {/* Floating Cart Button */}
       <TouchableOpacity
           style={{
             borderWidth: 1,
@@ -51,6 +53,11 @@ const Articles = () => {
             borderRadius: 100,
             zIndex: 2
           }}
+          onPress={() =>
+            navigation.navigate('Screens', {
+              screen: 'Cart',
+            })
+          }
       >
           <Image source={icons.menu}/>
       </TouchableOpacity>
@@ -108,4 +115,4 @@ const Articles = () => {
   );
 };
 
-export default Articles;
+export default MenuPage;

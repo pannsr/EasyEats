@@ -3,6 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import {Articles, Components, Home, Profile, Register, Pro, Branch} from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
+import Cart from '../screens/Cart';
 
 const Stack = createStackNavigator();
 
@@ -44,6 +45,12 @@ export default () => {
         component={Profile}
         options={{headerShown: false}}
       />
+
+    <Stack.Screen
+        name="Cart"
+        component={Cart}
+        options={screenOptions.cart}
+      />    
 
       <Stack.Screen
         name="Register"
