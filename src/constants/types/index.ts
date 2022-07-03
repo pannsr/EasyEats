@@ -50,6 +50,7 @@ export interface IBranch {
   title?: string;
   description?: string;
   linkLabel?: string;
+  numTable?: number;
   type: 'vertical' | 'horizontal';
 }
 
