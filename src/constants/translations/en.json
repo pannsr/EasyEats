@@ -41,6 +41,7 @@
     "addToCart": "Add to cart",
     "checkout": "Proceed to checkout",
     "readArticle": "Select Restaurant",
+    "selectBranch": "Select Branch",
     "send": "Send",
     "guests": {
       "one": "1 guest",

@@ -9,10 +9,12 @@ import Image from './Image';
 import Article from './Article';
 import Product from './Product';
 import Menu from './Menu';
+import BranchComponent from './BranchComponent';
 
 export {
   Block,
   Button,
+  BranchComponent,
   Input,
   Text,
   Switch,

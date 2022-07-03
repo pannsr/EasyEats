@@ -45,6 +45,14 @@ export interface IArticle {
   onPress?: (event?: any) => void;
 }
 
+export interface IBranch {
+  id?:number;
+  title?: string;
+  description?: string;
+  linkLabel?: string;
+  type: 'vertical' | 'horizontal';
+}
+
 export interface IRestaurant {
   id?: number;
   title?: string;
@@ -81,6 +89,8 @@ export interface IUseData {
   handleUsers: (data?: IUser[]) => void;
   basket: IBasket;
   handleBasket: (data?: IBasket) => void;
+  branches: IBranch[];
+  setBranches: (data?: IBranch[]) => void;
   mainRestaurants: IRestaurant[];
   setMainRestaurants: (data?: IRestaurant[]) => void;
   categories: ICategory[];
