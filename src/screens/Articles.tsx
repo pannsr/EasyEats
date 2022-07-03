@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, TouchableOpacity} from 'react-native';
 
 import {useData, useTheme} from '../hooks/';
-import {IArticle, ICategory} from '../constants/types';
-import {Block, Button, Article, Text} from '../components/';
+import {IArticle, ICategory, IMenu} from '../constants/types';
+import {Block, Button, Article, Text, Menu} from '../components/';
 
 const Articles = () => {
   const data = useData();
@@ -12,8 +12,12 @@ const Articles = () => {
   const [categories, setCategories] = useState<ICategory[]>([]);
   const {colors, gradients, sizes} = useTheme();
 
+  const {menus} = useData();
+  const [menu, setMenu] = useState(menus);
+
   // init articles
   useEffect(() => {
+    // THIS sets what articles (specific text and image) it displays
     setArticles(data?.articles);
     setCategories(data?.categories);
     setSelected(data?.categories[0]);
@@ -66,14 +70,19 @@ const Articles = () => {
         </Block>
       </Block>
 
-      <FlatList
-        data={articles}
+      {/* All the menus */}
+      <Block
+        scroll
+        paddingHorizontal={sizes.padding}
         showsVerticalScrollIndicator={false}
-        keyExtractor={(item) => `${item?.id}`}
-        style={{paddingHorizontal: sizes.padding}}
-        contentContainerStyle={{paddingBottom: sizes.l}}
-        renderItem={({item}) => <Article {...item} />}
-      />
+        contentContainerStyle={{paddingBottom: sizes.l}}>
+        <Block row wrap="wrap" justify="space-between" marginTop={sizes.sm}>
+          {menus?.map((menu) => (
+            /* Uses the Product component from components/Product.tsx */
+            <Menu {...menu} key={`card-${menu?.id}`} />
+          ))}
+        </Block>
+      </Block>
     </Block>
   );
 };

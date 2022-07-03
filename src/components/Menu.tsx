@@ -4,12 +4,12 @@ import {TouchableOpacity} from 'react-native';
 import Block from './Block';
 import Image from './Image';
 import Text from './Text';
-import {IRestaurant} from '../constants/types';
+import {IMenu} from '../constants/types';
 import {useTheme, useTranslation} from '../hooks/';
 import { NavigationContainer } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
 
-const Product = ({image, title, type, linkLabel, description, timestamp}: IRestaurant) => {
+const Menu = ({image, title, type, linkLabel, description, timestamp}: IMenu) => {
   const {t} = useTranslation();
   const {assets, colors, sizes} = useTheme();
   const navigation = useNavigation();
@@ -75,4 +75,4 @@ const Product = ({image, title, type, linkLabel, description, timestamp}: IResta
   );
 };
 
-export default Product;
+export default Menu;

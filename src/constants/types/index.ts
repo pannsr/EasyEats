@@ -39,13 +39,13 @@ export interface IArticle {
   location?: ILocation;
   rating?: number;
   user?: IUser;
-  offers?: IProduct[];
+  offers?: IRestaurant[];
   options?: IArticleOptions[];
   timestamp?: number;
   onPress?: (event?: any) => void;
 }
 
-export interface IProduct {
+export interface IRestaurant {
   id?: number;
   title?: string;
   description?: string;
@@ -53,6 +53,17 @@ export interface IProduct {
   timestamp?: number;
   linkLabel?: string;
   type: 'vertical' | 'horizontal';
+}
+export interface IMenu {
+  id?: number;
+  title?: string;
+  description?: string;
+  image?: string;
+  timestamp?: number;
+  linkLabel?: string;
+  type: 'vertical' | 'horizontal';
+  category?: ICategory;
+
 }
 export interface ILocation {
   id?: number;
@@ -70,16 +81,16 @@ export interface IUseData {
   handleUsers: (data?: IUser[]) => void;
   basket: IBasket;
   handleBasket: (data?: IBasket) => void;
-  following: IProduct[];
-  setFollowing: (data?: IProduct[]) => void;
-  trending: IProduct[];
-  setTrending: (data?: IProduct[]) => void;
+  mainRestaurants: IRestaurant[];
+  setMainRestaurants: (data?: IRestaurant[]) => void;
   categories: ICategory[];
   setCategories: (data?: ICategory[]) => void;
   recommendations: IArticle[];
   setRecommendations: (data?: IArticle[]) => void;
   articles: IArticle[];
   setArticles: (data?: IArticle[]) => void;
+  menus: IMenu[];
+  setMenus: (data?: IMenu[]) => void;
   article: IArticle;
   handleArticle: (data?: IArticle) => void;
   notifications: INotification[];

@@ -10,9 +10,6 @@ const Pro = () => {
 
   useEffect(() => {
     StatusBar.setBarStyle('light-content');
-    return () => {
-      StatusBar.setBarStyle('dark-content');
-    };
   }, []);
 
   const handleWebLink = useCallback((url) => Linking.openURL(url), []);

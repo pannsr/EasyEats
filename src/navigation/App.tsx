@@ -8,16 +8,7 @@ import Menu from './Menu';
 import {useData, ThemeProvider, TranslationProvider} from '../hooks';
 
 export default () => {
-  const {isDark, theme, setTheme} = useData();
-
-  /* set the status bar based on isDark constant */
-  useEffect(() => {
-    Platform.OS === 'android' && StatusBar.setTranslucent(true);
-    StatusBar.setBarStyle(isDark ? 'light-content' : 'dark-content');
-    return () => {
-      StatusBar.setBarStyle('default');
-    };
-  }, [isDark]);
+  const {theme, setTheme} = useData();
 
   // load custom fonts
   const [fontsLoaded] = useFonts({
@@ -34,7 +25,6 @@ export default () => {
 
   const navigationTheme = {
     ...DefaultTheme,
-    dark: isDark,
     colors: {
       ...DefaultTheme.colors,
       border: 'rgba(0,0,0,0)',

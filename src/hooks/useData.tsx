@@ -4,18 +4,19 @@ import Storage from '@react-native-async-storage/async-storage';
 import {
   IArticle,
   ICategory,
-  IProduct,
+  IRestaurant,
   IUser,
   IUseData,
   ITheme,
+  IMenu,
 } from '../constants/types';
 
 import {
   USERS,
-  FOLLOWING,
-  TRENDING,
+  MAIN_RESTAURANTS,
   CATEGORIES,
   ARTICLES,
+  MENUS
 } from '../constants/mocks';
 import {light} from '../constants';
 
@@ -26,8 +27,8 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
   const [theme, setTheme] = useState<ITheme>(light);
   const [user, setUser] = useState<IUser>(USERS[0]);
   const [users, setUsers] = useState<IUser[]>(USERS);
-  const [following, setFollowing] = useState<IProduct[]>(FOLLOWING);
-  const [trending, setTrending] = useState<IProduct[]>(TRENDING);
+  const [mainRestaurants, setMainRestaurants] = useState<IRestaurant[]>(MAIN_RESTAURANTS);
+  const [menus, setMenus] = useState<IMenu[]>(MENUS);
   const [categories, setCategories] = useState<ICategory[]>(CATEGORIES);
   const [articles, setArticles] = useState<IArticle[]>(ARTICLES);
   const [article, setArticle] = useState<IArticle>({});
@@ -106,14 +107,14 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
     users,
     handleUsers,
     handleUser,
-    following,
-    setFollowing,
-    trending,
-    setTrending,
+    mainRestaurants,
+    setMainRestaurants,
     categories,
     setCategories,
     articles,
     setArticles,
+    menus,
+    setMenus,
     article,
     handleArticle,
   };

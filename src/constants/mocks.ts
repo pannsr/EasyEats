@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+import { timezone } from 'expo-localization';
 import {
   IArticle,
   IArticleOptions,
@@ -7,8 +8,9 @@ import {
   IExtra,
   ILocation,
   INotification,
-  IProduct,
+  IRestaurant,
   IUser,
+  IMenu,
 } from './types';
 
 // users
@@ -81,97 +83,80 @@ export const USERS: IUser[] = [
   },
 ];
 
-// following cards
-export const FOLLOWING: IProduct[] = [
+// main restaurants cards
+export const MAIN_RESTAURANTS: IRestaurant[] = [
   {
     id: 1,
-    type: 'vertical',
-    title: 'Unique activities with local experts.',
+    type: 'horizontal',
+    title: 'Hachiban Ramen',
     image:
-      'https://images.unsplash.com/photo-1604998103924-89e012e5265a?fit=crop&w=450&q=80',
+      'https://d1sag4ddilekf6.azureedge.net/compressed/merchants/3-C2TGFFWWTKVAC6/hero/e6274f90fec14f85826f4aed91f41f47_1645981740553211506.png',
   },
   {
     id: 2,
-    type: 'vertical',
-    title: 'The highest status people.',
+    type: 'horizontal',
+    title: 'Yoshinoya',
     image:
-      'https://images.unsplash.com/photo-1563492065599-3520f775eeed?fit=crop&w=450&q=80',
+      'https://upload.wikimedia.org/wikipedia/id/3/3d/Yoshinoya_logo.jpg',
   },
   {
     id: 3,
     type: 'horizontal',
-    title: 'Experiences and things to do wherever you are.',
+    title: 'Pepper Lunch',
     image:
-      'https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?fit=crop&w=450&q=80',
+      'https://www.centralparkjakarta.com/wp-content/uploads/2017/10/pepper-lunc.jpg',
   },
   {
     id: 4,
-    type: 'vertical',
-    title: 'Get more followers and grow.',
-    image:
-      'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?fit=crop&w=450&q=80',
-  },
-  {
-    id: 5,
-    type: 'vertical',
-    title: 'New ways to meet your business goals.',
-    image:
-      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?fit=crop&w=450&q=80',
-  },
-  {
-    id: 6,
     type: 'horizontal',
-    title: 'Adventures - Multi day trips with meals and stays.',
+    title: 'Santa Fé Steak',
     image:
-      'https://images.unsplash.com/photo-1468078809804-4c7b3e60a478?fit=crop&w=450&q=80',
-  },
+      'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+  }
 ];
 
-// trending cards
-export const TRENDING: IProduct[] = [
+// main restaurants cards
+export const MENUS: IMenu[] = [
   {
     id: 1,
     type: 'horizontal',
-    title: 'Experiences and things to do wherever you are.',
+    title: 'Menu 1',
+    category: CATEGORIES[0],
     image:
-      'https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?fit=crop&w=450&q=80',
+      'https://d1sag4ddilekf6.azureedge.net/compressed/merchants/3-C2TGFFWWTKVAC6/hero/e6274f90fec14f85826f4aed91f41f47_1645981740553211506.png',
   },
   {
     id: 2,
-    type: 'vertical',
-    title: 'The highest status people.',
+    type: 'horizontal',
+    title: 'Menu 2',
+    category: CATEGORIES[0],
     image:
-      'https://images.unsplash.com/photo-1563492065599-3520f775eeed?fit=crop&w=450&q=80',
+      'https://upload.wikimedia.org/wikipedia/id/3/3d/Yoshinoya_logo.jpg',
   },
   {
     id: 3,
-    type: 'vertical',
-    title: 'Unique activities with local experts.',
+    type: 'horizontal',
+    title: 'Menu 3',
+    category: CATEGORIES[0],
     image:
-      'https://images.unsplash.com/photo-1604998103924-89e012e5265a?fit=crop&w=450&q=80',
+      'https://www.centralparkjakarta.com/wp-content/uploads/2017/10/pepper-lunc.jpg',
   },
   {
     id: 4,
-    type: 'vertical',
-    title: 'Adventures - Multi day trips with meals and stays.',
+    type: 'horizontal',
+    title: 'Menu 4',
+    category: CATEGORIES[0],
     image:
-      'https://images.unsplash.com/photo-1468078809804-4c7b3e60a478?fit=crop&w=450&q=80',
-  },
-  {
-    id: 5,
-    type: 'vertical',
-    title: 'New ways to meet your business goals.',
-    image:
-      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?fit=crop&w=450&q=80',
-  },
+      'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+  }
 ];
 
 // categories
 export const CATEGORIES: ICategory[] = [
-  {id: 1, name: 'Popular'},
-  {id: 2, name: 'Newest'},
-  {id: 3, name: 'Fashion'},
-  {id: 4, name: 'Best deal'},
+  {id: 1, name: 'Appetizers'},
+  {id: 2, name: 'Main Dishes'},
+  {id: 3, name: 'Desserts'},
+  {id: 4, name: 'Drinks'},
 ];
 
 // article options
@@ -218,7 +203,7 @@ export const ARTICLE_OPTIONS: IArticleOptions[] = [
 ];
 
 // offers
-export const OFFERS: IProduct[] = [
+export const OFFERS: IRestaurant[] = [
   {
     id: 1,
     type: 'vertical',
@@ -703,12 +688,12 @@ export const NOTIFICATIONS: INotification[] = [
 
 export default {
   USERS,
-  FOLLOWING,
-  TRENDING,
+  MAIN_RESTAURANTS,
   CATEGORIES,
   ARTICLES,
   RECOMMENDATIONS,
   MESSSAGES,
   EXTRAS,
   NOTIFICATIONS,
+  MENUS
 };
