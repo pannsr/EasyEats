@@ -90,8 +90,13 @@ export default () => {
         </Button>
       ),
     },
-    back: {
+    branch: {
       ...menu,
+      headerTitle: () => (
+        <Text p>
+          {t('navigation.branch')}
+        </Text>
+      ),
       headerRight: () => null,
       headerLeft: () => (
         <Button onPress={() => navigation.goBack()}>

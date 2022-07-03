@@ -54,6 +54,17 @@ export interface IRestaurant {
   linkLabel?: string;
   type: 'vertical' | 'horizontal';
 }
+export interface IMenu {
+  id?: number;
+  title?: string;
+  description?: string;
+  image?: string;
+  timestamp?: number;
+  linkLabel?: string;
+  type: 'vertical' | 'horizontal';
+  category?: ICategory;
+
+}
 export interface ILocation {
   id?: number;
   city?: string;
@@ -78,6 +89,8 @@ export interface IUseData {
   setRecommendations: (data?: IArticle[]) => void;
   articles: IArticle[];
   setArticles: (data?: IArticle[]) => void;
+  menus: IMenu[];
+  setMenus: (data?: IMenu[]) => void;
   article: IArticle;
   handleArticle: (data?: IArticle) => void;
   notifications: INotification[];

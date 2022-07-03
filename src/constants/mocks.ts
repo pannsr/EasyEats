@@ -10,6 +10,7 @@ import {
   INotification,
   IRestaurant,
   IUser,
+  IMenu,
 } from './types';
 
 // users
@@ -114,12 +115,48 @@ export const MAIN_RESTAURANTS: IRestaurant[] = [
   }
 ];
 
+// main restaurants cards
+export const MENUS: IMenu[] = [
+  {
+    id: 1,
+    type: 'horizontal',
+    title: 'Menu 1',
+    category: CATEGORIES[0],
+    image:
+      'https://d1sag4ddilekf6.azureedge.net/compressed/merchants/3-C2TGFFWWTKVAC6/hero/e6274f90fec14f85826f4aed91f41f47_1645981740553211506.png',
+  },
+  {
+    id: 2,
+    type: 'horizontal',
+    title: 'Menu 2',
+    category: CATEGORIES[0],
+    image:
+      'https://upload.wikimedia.org/wikipedia/id/3/3d/Yoshinoya_logo.jpg',
+  },
+  {
+    id: 3,
+    type: 'horizontal',
+    title: 'Menu 3',
+    category: CATEGORIES[0],
+    image:
+      'https://www.centralparkjakarta.com/wp-content/uploads/2017/10/pepper-lunc.jpg',
+  },
+  {
+    id: 4,
+    type: 'horizontal',
+    title: 'Menu 4',
+    category: CATEGORIES[0],
+    image:
+      'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+  }
+];
+
 // categories
 export const CATEGORIES: ICategory[] = [
-  {id: 1, name: 'Popular'},
-  {id: 2, name: 'Newest'},
-  {id: 3, name: 'Fashion'},
-  {id: 4, name: 'Best deal'},
+  {id: 1, name: 'Appetizers'},
+  {id: 2, name: 'Main Dishes'},
+  {id: 3, name: 'Desserts'},
+  {id: 4, name: 'Drinks'},
 ];
 
 // article options
@@ -658,4 +695,5 @@ export default {
   MESSSAGES,
   EXTRAS,
   NOTIFICATIONS,
+  MENUS
 };
