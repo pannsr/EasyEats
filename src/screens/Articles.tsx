@@ -3,25 +3,22 @@ import {FlatList, TouchableOpacity} from 'react-native';
 
 import {useData, useTheme} from '../hooks/';
 import {IArticle, ICategory, IMenu} from '../constants/types';
-import {Block, Button, Article, Text, Menu} from '../components/';
+import {Block, Button, Article, Text, Menu, Image} from '../components/';
 
 const Articles = () => {
   const data = useData();
   const [selected, setSelected] = useState<ICategory>();
-  const [articles, setArticles] = useState<IArticle[]>([]);
   const [categories, setCategories] = useState<ICategory[]>([]);
-  const {colors, gradients, sizes} = useTheme();
-
-  const {menus} = useData();
-  const [menu, setMenu] = useState(menus);
+  const [menus, setMenus] = useState<IMenu[]>([]);
+  const {colors, gradients, sizes, icons} = useTheme();
 
   // init articles
   useEffect(() => {
     // THIS sets what articles (specific text and image) it displays
-    setArticles(data?.articles);
+    setMenus(data?.menus);
     setCategories(data?.categories);
     setSelected(data?.categories[0]);
-  }, [data.articles, data.categories]);
+  }, [data.menus, data.categories]);
 
   // update articles on category change
   useEffect(() => {
@@ -29,15 +26,35 @@ const Articles = () => {
       (category) => category?.id === selected?.id,
     );
 
-    const newArticles = data?.articles?.filter(
-      (article) => article?.category?.id === category?.id,
+    const newMenus = data?.menus?.filter(
+      (menu) => menu?.category?.id === category?.id,
     );
 
-    setArticles(newArticles);
-  }, [data, selected, setArticles]);
+    setMenus(newMenus);
+  }, [data, selected, setMenus]);
 
   return (
     <Block>
+      {/* Floating QR Button */}
+      <TouchableOpacity
+          style={{
+            borderWidth: 1,
+            borderColor: 'rgba(0,0,0,0.2)',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: 70,
+            position: 'absolute',
+            bottom: 30,
+            right: 10,
+            height: 70,
+            backgroundColor: '#fff',
+            borderRadius: 100,
+            zIndex: 2
+          }}
+      >
+          <Image source={icons.menu}/>
+      </TouchableOpacity>
+
       {/* categories list */}
       <Block color={colors.card} row flex={0} paddingVertical={sizes.padding}>
         <Block
@@ -71,19 +88,23 @@ const Articles = () => {
       </Block>
 
       {/* All the menus */}
-      <Block
-        scroll
-        paddingHorizontal={sizes.padding}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{paddingBottom: sizes.l}}>
-        <Block row wrap="wrap" justify="space-between" marginTop={sizes.sm}>
-          {menus?.map((menu) => (
-            /* Uses the Product component from components/Product.tsx */
-            <Menu {...menu} key={`card-${menu?.id}`} />
-          ))}
-        </Block>
-      </Block>
+      <FlatList
+        data={menus}
+        numColumns={2}
+        showsVerticalScrollIndicator={true}
+        keyExtractor={(item) => `${item?.id}`}
+        style={{paddingHorizontal: sizes.padding}}
+        contentContainerStyle={{paddingBottom: sizes.l}}
+        renderItem={({item}) => 
+          <Block row wrap="wrap" justify="space-between" marginTop={sizes.sm}>
+            <Menu {...item} />
+          </Block>
+        }
+      />
     </Block>
+
+    
+
   );
 };
 

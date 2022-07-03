@@ -34,7 +34,7 @@ export default () => {
       <Stack.Screen
         name="Articles"
         component={Articles}
-        options={{title: t('navigation.articles')}}
+        options={screenOptions.menu}
       />
 
       <Stack.Screen name="Pro" component={Pro} options={screenOptions.pro} />

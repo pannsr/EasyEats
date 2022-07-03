@@ -29,6 +29,7 @@ const Home = () => {
         value={searchQuery}
       />
 
+      {/* Floating QR Button */}
       <TouchableOpacity
           style={{
             borderWidth: 1,
