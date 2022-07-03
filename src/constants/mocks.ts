@@ -115,48 +115,88 @@ export const MAIN_RESTAURANTS: IRestaurant[] = [
   }
 ];
 
-// main restaurants cards
-export const MENUS: IMenu[] = [
-  {
-    id: 1,
-    type: 'horizontal',
-    title: 'Menu 1',
-    category: CATEGORIES[0],
-    image:
-      'https://d1sag4ddilekf6.azureedge.net/compressed/merchants/3-C2TGFFWWTKVAC6/hero/e6274f90fec14f85826f4aed91f41f47_1645981740553211506.png',
-  },
-  {
-    id: 2,
-    type: 'horizontal',
-    title: 'Menu 2',
-    category: CATEGORIES[0],
-    image:
-      'https://upload.wikimedia.org/wikipedia/id/3/3d/Yoshinoya_logo.jpg',
-  },
-  {
-    id: 3,
-    type: 'horizontal',
-    title: 'Menu 3',
-    category: CATEGORIES[0],
-    image:
-      'https://www.centralparkjakarta.com/wp-content/uploads/2017/10/pepper-lunc.jpg',
-  },
-  {
-    id: 4,
-    type: 'horizontal',
-    title: 'Menu 4',
-    category: CATEGORIES[0],
-    image:
-      'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
-  }
-];
-
 // categories
 export const CATEGORIES: ICategory[] = [
   {id: 1, name: 'Appetizers'},
   {id: 2, name: 'Main Dishes'},
   {id: 3, name: 'Desserts'},
   {id: 4, name: 'Drinks'},
+];
+
+// main restaurants cards
+export const MENUS: IMenu[] = [
+  {
+    id: 1,
+    type: 'vertical',
+    title: 'Appetizer 1',
+    category: CATEGORIES[0],
+    image:
+      'https://d1sag4ddilekf6.azureedge.net/compressed/merchants/3-C2TGFFWWTKVAC6/hero/e6274f90fec14f85826f4aed91f41f47_1645981740553211506.png',
+  },
+  {
+    id: 2,
+    type: 'vertical',
+    title: 'Appetizer 2',
+    category: CATEGORIES[0],
+    image:
+      'https://upload.wikimedia.org/wikipedia/id/3/3d/Yoshinoya_logo.jpg',
+  },
+  {
+    id: 3,
+    type: 'vertical',
+    title: 'Appetizer 3',
+    category: CATEGORIES[0],
+    image:
+      'https://www.centralparkjakarta.com/wp-content/uploads/2017/10/pepper-lunc.jpg',
+  },
+  {
+    id: 4,
+    type: 'vertical',
+    title: 'Appetizer 4',
+    category: CATEGORIES[0],
+    image:
+      'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+  },
+  {
+    id: 5,
+    type: 'vertical',
+    title: 'Appetizer 5',
+    category: CATEGORIES[0],
+    image:
+      'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+  },
+  {
+    id: 6,
+    type: 'vertical',
+    title: 'Main 1',
+    category: CATEGORIES[1],
+    image:
+      'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+  },
+  {
+    id: 7,
+    type: 'vertical',
+    title: 'Main 2',
+    category: CATEGORIES[1],
+    image:
+      'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+  },
+  {
+    id: 8,
+    type: 'vertical',
+    title: 'Dessert 1',
+    category: CATEGORIES[2],
+    image:
+      'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+  },
+  {
+    id: 9,
+    type: 'vertical',
+    title: 'Drink 1',
+    category: CATEGORIES[3],
+    image:
+      'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+  }
 ];
 
 // article options

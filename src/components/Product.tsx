@@ -63,7 +63,7 @@ const Product = ({image, title, type, linkLabel, description, timestamp}: IResta
               size={sizes.linkSize}
               marginRight={sizes.s}
             >
-              {linkLabel || t('common.readArticle')}
+              {linkLabel || t('common.selectRestaurant')}
             </Text >
             {/* This is the arrow */}
             <Image source={assets.arrow} color={colors.link} /> 
