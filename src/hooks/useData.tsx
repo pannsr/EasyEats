@@ -8,6 +8,7 @@ import {
   IUser,
   IUseData,
   ITheme,
+  IMenu,
 } from '../constants/types';
 
 import {
@@ -15,6 +16,7 @@ import {
   MAIN_RESTAURANTS,
   CATEGORIES,
   ARTICLES,
+  MENUS
 } from '../constants/mocks';
 import {light} from '../constants';
 
@@ -26,6 +28,7 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
   const [user, setUser] = useState<IUser>(USERS[0]);
   const [users, setUsers] = useState<IUser[]>(USERS);
   const [mainRestaurants, setMainRestaurants] = useState<IRestaurant[]>(MAIN_RESTAURANTS);
+  const [menus, setMenus] = useState<IMenu[]>(MENUS);
   const [categories, setCategories] = useState<ICategory[]>(CATEGORIES);
   const [articles, setArticles] = useState<IArticle[]>(ARTICLES);
   const [article, setArticle] = useState<IArticle>({});
@@ -110,6 +113,8 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
     setCategories,
     articles,
     setArticles,
+    menus,
+    setMenus,
     article,
     handleArticle,
   };

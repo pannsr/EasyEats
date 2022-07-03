@@ -21,7 +21,8 @@ export default () => {
       <Stack.Screen
         name="Branch"
         component={Branch}
-        options={{title: t('navigation.branch')}}
+        options={screenOptions.branch}
+        
       />
 
       <Stack.Screen
