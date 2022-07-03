@@ -71,7 +71,6 @@ export interface IMenu {
   linkLabel?: string;
   type: 'vertical' | 'horizontal';
   category?: ICategory;
-
 }
 export interface ILocation {
   id?: number;

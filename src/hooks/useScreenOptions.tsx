@@ -111,6 +111,28 @@ export default () => {
         </Button>
       ),
     },
+    menu: {
+      ...menu,
+      headerTitle: () => (
+        <Text p>
+          {t('navigation.menu')}
+        </Text>
+      ),
+      headerRight: () => null,
+      headerLeft: () => (
+        <Button onPress={() => navigation.navigate('Screens', {
+          screen: 'Home',
+        })}>
+          <Image
+            radius={0}
+            width={20}
+            height={20}
+            color={colors.black}
+            source={icons.home}
+          />
+        </Button>
+      ),
+    },
     profile: {
       ...menu,
       headerRight: () => (

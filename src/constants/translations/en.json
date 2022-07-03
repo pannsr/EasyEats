@@ -40,8 +40,9 @@
     "outStock": "Out of stock",
     "addToCart": "Add to cart",
     "checkout": "Proceed to checkout",
-    "readArticle": "Select Restaurant",
     "selectBranch": "Select Branch",
+    "selectRestaurant": "Select Restaurant",
+    "selectMenu": "Add to order",
     "send": "Send",
     "guests": {
       "one": "1 guest",
@@ -72,6 +73,7 @@
     "branch": "Select a branch and table number",
     "components": "Components",
     "articles": "Soft UI",
+    "menu": "Menu",
     "rentals": "Soft UI",
     "rental": "Best Deal",
     "booking": "Booking",

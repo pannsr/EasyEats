@@ -21,7 +21,32 @@ const Home = () => {
   return (
     <Block>
       {/* search input */}
-     
+
+       <Searchbar
+        placeholder="Search"
+        onChangeText={onChangeSearch}
+        value={searchQuery}
+      />
+
+      {/* Floating QR Button */}
+      <TouchableOpacity
+          style={{
+            borderWidth: 1,
+            borderColor: 'rgba(0,0,0,0.2)',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: 70,
+            position: 'absolute',
+            bottom: 30,
+            right: 10,
+            height: 70,
+            backgroundColor: '#fff',
+            borderRadius: 100,
+            zIndex: 2
+          }}
+      >
+          <Image source={icons.menu}/>
+      </TouchableOpacity>
       
       {/* products list */}
       <Block
