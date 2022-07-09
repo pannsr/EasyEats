@@ -97,7 +97,6 @@ export default () => {
           {t('navigation.cart')}
         </Text>
       ),
-      headerRight: () => null,
       headerLeft: () => (
         <Button onPress={() => navigation.goBack()}>
           <Image

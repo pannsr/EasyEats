@@ -154,6 +154,7 @@ export const MENUS: IMenu[] = [
     category: CATEGORIES[0],
     image:
       'https://d1sag4ddilekf6.azureedge.net/compressed/merchants/3-C2TGFFWWTKVAC6/hero/e6274f90fec14f85826f4aed91f41f47_1645981740553211506.png',
+    price: 500
   },
   {
     id: 2,
@@ -162,6 +163,7 @@ export const MENUS: IMenu[] = [
     category: CATEGORIES[0],
     image:
       'https://upload.wikimedia.org/wikipedia/id/3/3d/Yoshinoya_logo.jpg',
+    price: 250,
   },
   {
     id: 3,
@@ -170,6 +172,7 @@ export const MENUS: IMenu[] = [
     category: CATEGORIES[0],
     image:
       'https://www.centralparkjakarta.com/wp-content/uploads/2017/10/pepper-lunc.jpg',
+    price: 20,
   },
   {
     id: 4,
@@ -178,6 +181,7 @@ export const MENUS: IMenu[] = [
     category: CATEGORIES[0],
     image:
       'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+    price: 300,
   },
   {
     id: 5,
@@ -186,6 +190,7 @@ export const MENUS: IMenu[] = [
     category: CATEGORIES[0],
     image:
       'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+    price: 320,
   },
   {
     id: 6,
@@ -194,6 +199,7 @@ export const MENUS: IMenu[] = [
     category: CATEGORIES[1],
     image:
       'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+    price: 370,
   },
   {
     id: 7,
@@ -202,6 +208,7 @@ export const MENUS: IMenu[] = [
     category: CATEGORIES[1],
     image:
       'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+    price: 100,
   },
   {
     id: 8,
@@ -210,6 +217,7 @@ export const MENUS: IMenu[] = [
     category: CATEGORIES[2],
     image:
       'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+    price: 30,
   },
   {
     id: 9,
@@ -218,6 +226,7 @@ export const MENUS: IMenu[] = [
     category: CATEGORIES[3],
     image:
       'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+    price: 500,
   }
 ];
 
@@ -308,17 +317,20 @@ export const ARTICLES: IBlock[] = [
   {
     id: 1,
     foodTitle: 'Food 1',
-    foodQuantity: 2
+    foodQuantity: 2,
+    price: 500,
   }, 
   {
     id: 2,
     foodTitle: 'Food 2',
-    foodQuantity: 3
+    foodQuantity: 3,
+    price: 250,
   }, 
   {
     id: 3,
     foodTitle: 'Food 2',
-    foodQuantity: 1
+    foodQuantity: 1,
+    price: 20,
   },
 ];
 

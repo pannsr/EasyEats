@@ -9,7 +9,7 @@ import {useTheme, useTranslation} from '../hooks/';
 import { NavigationContainer } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
 
-const Menu = ({image, title, type, linkLabel, description, timestamp}: IMenu) => {
+const Menu = ({image, price, title, type, linkLabel, description, timestamp}: IMenu) => {
   const {t} = useTranslation();
   const {assets, colors, sizes} = useTheme();
   const navigation = useNavigation();
@@ -42,16 +42,20 @@ const Menu = ({image, title, type, linkLabel, description, timestamp}: IMenu) =>
         paddingLeft={isHorizontal ? sizes.sm : 0}
         paddingBottom={isHorizontal ? sizes.s : 0}>
 
-        {/* Title text */}
-        <Text p marginTop={sizes.s}>
+        {/* Food menu title text */}
+        <Text p marginTop={sizes.xs}>
           {title}
         </Text>
 
-        {/* Select restaurant (Text and arrow) */}
+        <Text marginTop={sizes.xs}>
+          {price} THB
+        </Text>
+
+        {/* Add to order (Text and arrow) */}
         <TouchableOpacity 
           onPress = {() => 
             navigation.navigate('Screens', {
-              screen: 'Branch'
+              screen: 'Customizable'
             })
           }>
           <Block row flex={0} align="center">

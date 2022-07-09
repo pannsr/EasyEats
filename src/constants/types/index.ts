@@ -35,6 +35,7 @@ export interface IBlock {
   foodQuantity?: number;
   foodTitle?: string;
   linkLabel?: string;
+  price?: number;
   onPress?: (event?: any) => void;
 }
 
@@ -48,7 +49,7 @@ export interface IBranch {
 
 export interface IRestaurant {
   id?: number;
-  title?: string;
+  title: string;
   description?: string;
   image?: string;
   timestamp?: number;
@@ -64,6 +65,7 @@ export interface IMenu {
   linkLabel?: string;
   type: 'vertical' | 'horizontal';
   category?: ICategory;
+  price?: number;
 }
 export interface ILocation {
   id?: number;
