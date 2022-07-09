@@ -30,7 +30,7 @@ const Customizable = () => {
                           paddingVertical:10, 
                           paddingHorizontal: 8,
                           fontSize: 18}} 
-                    placeholder="Regular" multiline />
+                    placeholder="Customize your dish" multiline />
       </Block>
       <Block style={{justifyContent: 'flex-end', alignItems: 'center'}}>
         <Button 

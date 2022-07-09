@@ -42,11 +42,9 @@ export default () => {
       <Button onPress={() => navigation.goBack()}>
         <Image
           radius={0}
-          width={10}
-          height={18}
-          color={colors.icon}
-          source={icons.arrow}
-          transform={[{rotate: '180deg'}]}
+          width={12}
+          height={20}
+          source={icons.back}
         />
       </Button>
     ),
@@ -59,7 +57,11 @@ export default () => {
               screen: 'Profile',
             })
           }>
-          <Image source={icons.profile} radius={1}/>
+          <Image
+          width={30}
+          height={30}
+          source={icons.profile} 
+          radius={1}/>
         </TouchableOpacity>
       </Block>
     ),

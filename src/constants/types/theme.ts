@@ -212,6 +212,7 @@ export interface ThemeIcons {
   facebook: ImageSourcePropType;
   arrow: ImageSourcePropType;
   articles: ImageSourcePropType;
+  back: ImageSourcePropType;
   basket: ImageSourcePropType;
   bell: ImageSourcePropType;
   calendar: ImageSourcePropType;
