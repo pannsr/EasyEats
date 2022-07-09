@@ -13,7 +13,8 @@ const Article = ({
   foodTitle,
   onPress,
   linkLabel,
-  foodQuantity
+  foodQuantity,
+  price,
 }: IBlock) => {
   const {t} = useTranslation();
   const {colors, gradients, icons, sizes} = useTheme();
@@ -32,7 +33,16 @@ const Article = ({
               {foodTitle}
             </Text>
           )}
-          <Button gradient={gradients.success} height={30} width={30} position="absolute" right={10} top={13}>
+          {price && (
+            <Text
+              p
+              marginTop={sizes.xs}
+              marginLeft={sizes.xs}
+              marginBottom={sizes.xs}>
+              {price.toString()}
+            </Text>
+          )}
+          <Button gradient={gradients.success} height={30} width={30} position="absolute" right={10} top={8}>
             <Text white bold>
               x{foodQuantity}
             </Text>
@@ -49,7 +59,8 @@ const Article = ({
               color={colors.link}
               semibold
               size={sizes.linkSize}
-              marginRight={sizes.l}
+              style={{alignSelf: 'flex-end'}}
+              marginRight={sizes.sm}
             >
               {linkLabel || t('common.edit')}
             </Text >
