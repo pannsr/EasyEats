@@ -27,8 +27,8 @@ const Branch = () => {
         scroll
         paddingHorizontal={sizes.padding}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{paddingBottom: sizes.l, alignItems: 'center'}}>
-          <Block contentContainerStyle={{flex:1}}>
+        contentContainerStyle={{paddingBottom: sizes.l}}>
+          <Block>
             <Text h4 marginVertical={sizes.s} marginTop={sizes.sm}>
               Choose a branch for this restaurant
             </Text>
@@ -115,7 +115,7 @@ const Branch = () => {
               />
             </Modal>
           </Block>
-          <Block>
+          <Block style={{justifyContent: 'flex-end', alignItems: 'center'}}>
             <Button 
             onPress={() => navigation.navigate('Screens', {screen: 'MenuPage'})}
             gradient={gradients.success} 
