@@ -53,23 +53,6 @@ const Branch = () => {
                   />
                 </Block>
             </Button>
-            <Modal visible={showModal} onRequestClose={() => setModal(false)}>
-              <FlatList
-                data={branchObj}
-                renderItem={({item}) => (
-                  <Button
-                    marginBottom={sizes.sm}
-                    onPress={() => {
-                      setBranch(item);
-                      setModal(false);
-                    }}>
-                    <Text p white semibold transform="uppercase">
-                      {item.title}
-                    </Text>
-                  </Button>
-                )}
-              />
-            </Modal>
 
             {/* table input number */}
             <Text h4 marginVertical={sizes.s} marginTop={sizes.l}>
@@ -96,7 +79,37 @@ const Branch = () => {
                   />
                 </Block>
             </Button>
-            <Modal visible={showModalTable} onRequestClose={() => setModalTable(false)}>
+          </Block>
+          <Block style={{justifyContent: 'flex-end', alignItems: 'center'}}>
+            <Button 
+            onPress={() => navigation.navigate('Screens', {screen: 'MenuPage'})}
+            gradient={gradients.success} 
+            marginVertical={sizes.xl} 
+            rounded={true} 
+            height={30} width={300}>
+                <Text white bold transform="uppercase">
+                  Next
+                </Text>
+            </Button>
+          </Block> 
+          <Modal visible={showModal} onRequestClose={() => setModal(false)}>
+              <FlatList
+                data={branchObj}
+                renderItem={({item}) => (
+                  <Button
+                    marginBottom={sizes.sm}
+                    onPress={() => {
+                      setBranch(item);
+                      setModal(false);
+                    }}>
+                    <Text p white semibold transform="uppercase">
+                      {item.title}
+                    </Text>
+                  </Button>
+                )}
+              />
+          </Modal>
+          <Modal visible={showModalTable} onRequestClose={() => setModalTable(false)}>
               <FlatList
                 keyExtractor={(index) => `${index}`}
                 data={Array.from(Array(branchAt.numTable).keys()).map(x => x+1)}
@@ -113,20 +126,7 @@ const Branch = () => {
                   </Button>
                 )}
               />
-            </Modal>
-          </Block>
-          <Block style={{justifyContent: 'flex-end', alignItems: 'center'}}>
-            <Button 
-            onPress={() => navigation.navigate('Screens', {screen: 'MenuPage'})}
-            gradient={gradients.success} 
-            marginVertical={sizes.xl} 
-            rounded={true} 
-            height={30} width={300}>
-                <Text white bold transform="uppercase">
-                  Next
-                </Text>
-            </Button>
-          </Block>    
+          </Modal>
       </Block>
   );
 };
