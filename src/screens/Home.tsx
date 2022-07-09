@@ -4,9 +4,11 @@ import {useData, useTheme, useTranslation} from '../hooks/';
 import {Block, Image, Product} from '../components/';
 import { TouchableOpacity } from 'react-native';
 import { Searchbar } from 'react-native-paper';
+import {useNavigation} from '@react-navigation/core';
 
 
 const Home = () => {
+  const navigation = useNavigation();
   const {t} = useTranslation()
   const {mainRestaurants} = useData();
   const [products, setProducts] = useState(mainRestaurants);
@@ -39,10 +41,15 @@ const Home = () => {
             height: 70,
             backgroundColor: '#fff',
             borderRadius: 100,
-            zIndex: 2
+            zIndex: 2,
           }}
+          onPress={() =>
+            navigation.navigate('Screens', {
+              screen: 'QR',
+            })
+          }
       >
-          <Image source={icons.menu}/>
+          <Image style={{width: 35, height: 35}} radius={0} source={icons.qr}/>
       </TouchableOpacity>
       
       {/* products list */}

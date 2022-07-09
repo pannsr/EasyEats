@@ -5,6 +5,7 @@ import {Components, Home, Profile, Register, Pro, Branch, MenuPage} from '../scr
 import {useScreenOptions, useTranslation} from '../hooks';
 import Cart from '../screens/Cart';
 import Customizable from '../screens/Customizable';
+import QR from '../screens/QR';
 
 const Stack = createStackNavigator();
 
@@ -24,6 +25,12 @@ export default () => {
         name="Branch"
         component={Branch}
         options={{title: t('navigation.branch')}}  
+      />
+
+      <Stack.Screen
+        name="QR"
+        component={QR}
+        options={{title: t('navigation.QR')}}  
       />
 
       <Stack.Screen
