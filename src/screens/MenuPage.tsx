@@ -40,8 +40,8 @@ const MenuPage = () => {
       {/* Floating Cart Button */}
       <TouchableOpacity
           style={{
-            borderWidth: 1,
-            borderColor: 'rgba(0,0,0,0.2)',
+            borderWidth: 2,
+            borderColor: 'rgba(0,0,0,10)',
             alignItems: 'center',
             justifyContent: 'center',
             width: 70,
@@ -59,7 +59,7 @@ const MenuPage = () => {
             })
           }
       >
-          <Image style={{width:60, height:60,}} source={icons.cart}/>
+          <Image style={{width:60, height:60, right: 2}} source={icons.cart}/>
       </TouchableOpacity>
 
       {/* categories list */}

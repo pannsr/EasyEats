@@ -5,9 +5,10 @@ import {Block, Button, Image, Input, Product, Text} from '../components';
 import { TouchableOpacity, TextInput } from 'react-native';
 import { ICONS } from '../constants/theme';
 import { Searchbar } from 'react-native-paper';
-
+import { useNavigation } from '@react-navigation/native';
 
 const Customizable = () => {
+  const navigation = useNavigation();
   const {t} = useTranslation();
   const [tab, setTab] = useState<number>(0);
   const {mainRestaurants} = useData();
@@ -37,7 +38,12 @@ const Customizable = () => {
             gradient={gradients.success} 
             marginVertical={sizes.xl} 
             rounded={true} 
-            height={30} width={300}>
+            height={30} width={300}
+            onPress = {() => 
+              navigation.navigate('Screens', {
+                screen: 'Cart'
+            })}
+            >
                 <Text white bold transform="uppercase">
                   Place Order
                 </Text>

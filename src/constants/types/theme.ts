@@ -245,6 +245,8 @@ export interface ThemeIcons {
   warning: ImageSourcePropType;
   qr: ImageSourcePropType;
   cart: ImageSourcePropType;
+  cancel: ImageSourcePropType;
+  reload: ImageSourcePropType;
 }
 
 export interface ThemeAssets {
@@ -257,6 +259,7 @@ export interface ThemeAssets {
   logo: ImageSourcePropType;
   header: ImageSourcePropType;
   background: ImageSourcePropType;
+  qrscanner: ImageSourcePropType;
 
   card1: ImageSourcePropType;
   card2: ImageSourcePropType;

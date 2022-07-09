@@ -70,6 +70,8 @@ export const ICONS: ThemeIcons = {
   warning: require('../assets/icons/warning.png'),
   qr: require('../assets/icons/qr.png'),
   cart: require('../assets/icons/cart.png'),
+  cancel: require('../assets/icons/cancel.png'),
+  reload: require('../assets/icons/reload.png'),
 };
 
 export const ASSETS: ThemeAssets = {
@@ -86,6 +88,7 @@ export const ASSETS: ThemeAssets = {
   background: require('../assets/images/background.png'),
   ios: require('../assets/images/ios.png'),
   android: require('../assets/images/android.png'),
+  qrscanner: require('../assets/images/QRScanner.png'),
 
   // cards
   card1: require('../assets/images/card1.png'),
