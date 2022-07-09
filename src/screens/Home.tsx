@@ -30,8 +30,8 @@ const Home = () => {
       {/* Floating QR Button */}
       <TouchableOpacity
           style={{
-            borderWidth: 1,
-            borderColor: 'rgba(0,0,0,0.2)',
+            borderWidth: 2,
+            borderColor: 'rgba(0,0,0,10)',
             alignItems: 'center',
             justifyContent: 'center',
             width: 70,
