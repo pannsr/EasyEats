@@ -242,6 +242,8 @@ export interface ThemeIcons {
   train: ImageSourcePropType;
   users: ImageSourcePropType;
   warning: ImageSourcePropType;
+  qr: ImageSourcePropType;
+  cart: ImageSourcePropType;
 }
 
 export interface ThemeAssets {
