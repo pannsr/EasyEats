@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {Articles, Components, Home, Profile, Register, Pro, Branch} from '../screens';
+import {Components, Home, Profile, Register, Pro, Branch, MenuPage} from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 import Cart from '../screens/Cart';
 import Customizable from '../screens/Customizable';
@@ -23,20 +23,19 @@ export default () => {
       <Stack.Screen
         name="Branch"
         component={Branch}
-        options={screenOptions.branch}
-        
+        options={screenOptions.branch}  
       />
+
+      <Stack.Screen
+        name="MenuPage"
+        component={MenuPage}
+        options={screenOptions.menu}  
+      />  
 
       <Stack.Screen
         name="Components"
         component={Components}
         options={screenOptions.components}
-      />
-
-      <Stack.Screen
-        name="Articles"
-        component={Articles}
-        options={screenOptions.menu}
       />
 
       <Stack.Screen name="Pro" component={Pro} options={screenOptions.pro} />
