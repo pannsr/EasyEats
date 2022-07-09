@@ -30,7 +30,7 @@ export default () => {
       <Stack.Screen
         name="QR"
         component={QR}
-        options={{title: t('navigation.QR')}}  
+        options={{headerShown: false}}  
       />
 
       <Stack.Screen
