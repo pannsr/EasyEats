@@ -39,18 +39,24 @@ const Article = ({
               marginTop={sizes.xs}
               marginLeft={sizes.xs}
               marginBottom={sizes.xs}>
-              {price.toString()}
+              {price.toString()} THB
             </Text>
           )}
-          <Button gradient={gradients.success} height={30} width={30} position="absolute" right={10} top={8}>
+          <Button
+              onPress = {() => 
+                navigation.navigate('Screens', {
+                  screen: 'Customizable'
+              })}
+              gradient={gradients.success} height={30} width={30} position="absolute" right={10} top={8}>
             <Text white bold>
               x{foodQuantity}
             </Text>
           </Button>
+          {/* Edit button */}
           <TouchableOpacity 
           onPress = {() => 
             navigation.navigate('Screens', {
-              screen: 'Branch'
+              screen: 'Customizable'
             })
           }>
             {/* This is the text */}

@@ -70,6 +70,7 @@
     "extra": "Extra - Automotive"
   },
   "navigation": {
+    "customizable": "Customize your dish",
     "home": "EasyEats",
     "branch": "Select a branch and table number",
     "components": "Components",

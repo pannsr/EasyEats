@@ -37,9 +37,17 @@ export default () => {
       <Text p>{children}</Text>
     ),
     /* the three side bar icon, get rid if no navigation needed */
+    
     headerLeft: () => (
-      <Button onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
-        <Image source={icons.menu} radius={0} color={colors.icon} />
+      <Button onPress={() => navigation.goBack()}>
+        <Image
+          radius={0}
+          width={10}
+          height={18}
+          color={colors.icon}
+          source={icons.arrow}
+          transform={[{rotate: '180deg'}]}
+        />
       </Button>
     ),
     headerRight: () => (
@@ -59,74 +67,21 @@ export default () => {
 
   const options = {
     stack: menu,
-    components: {
-      ...menu,
-      headerTitle: () => (
-        <Text p white>
-          {t('navigation.components')}
-        </Text>
-      ),
-      headerRight: () => null,
-      headerLeft: () => (
-        <Button
-          onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
-          <Image source={icons.menu} radius={0} color={colors.white} />
-        </Button>
-      ),
-    },
-    pro: {
-      ...menu,
-      headerTransparent: true,
-      headerTitle: () => (
-        <Text p white semibold>
-          {t('pro.title')}
-        </Text>
-      ),
-      headerRight: () => null,
-      headerLeft: () => (
-        <Button
-          onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
-          <Image source={icons.menu} radius={0} color={colors.white} />
-        </Button>
-      ),
-    },
-    cart:{
+    home: {
       ...menu,
       headerTitle: () => (
         <Text p>
-          {t('navigation.cart')}
+          {t('navigation.home')}
         </Text>
       ),
       headerLeft: () => (
-        <Button onPress={() => navigation.goBack()}>
+        <Button>
           <Image
             radius={0}
-            width={10}
-            height={18}
-            color={colors.icon}
-            source={icons.arrow}
-            transform={[{rotate: '180deg'}]}
-          />
-        </Button>
-      ),
-    },
-    branch: {
-      ...menu,
-      headerTitle: () => (
-        <Text p>
-          {t('navigation.branch')}
-        </Text>
-      ),
-      headerRight: () => null,
-      headerLeft: () => (
-        <Button onPress={() => navigation.goBack()}>
-          <Image
-            radius={0}
-            width={10}
-            height={18}
-            color={colors.icon}
-            source={icons.arrow}
-            transform={[{rotate: '180deg'}]}
+            width={20}
+            height={20}
+            color={colors.black}
+            source={icons.home}
           />
         </Button>
       ),
@@ -138,7 +93,6 @@ export default () => {
           {t('navigation.menu')}
         </Text>
       ),
-      headerRight: () => null,
       headerLeft: () => (
         <Button onPress={() => navigation.navigate('Screens', {
           screen: 'Home',
@@ -151,44 +105,6 @@ export default () => {
             source={icons.home}
           />
         </Button>
-      ),
-    },
-    profile: {
-      ...menu,
-      headerRight: () => (
-        <Block row flex={0} align="center" marginRight={sizes.padding}>
-          <TouchableOpacity
-            style={{marginRight: sizes.sm}}
-            onPress={() =>
-              navigation.navigate('Screens', {
-                screen: 'Notifications',
-              })
-            }>
-            <Image source={icons.bell} radius={0} color={colors.icon} />
-            <Block
-              flex={0}
-              right={0}
-              width={sizes.s}
-              height={sizes.s}
-              radius={sizes.xs}
-              position="absolute"
-              gradient={gradients?.primary}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() =>
-              navigation.dispatch(
-                DrawerActions.jumpTo('Screens', {screen: 'Profile'}),
-              )
-            }>
-            <Image
-              radius={6}
-              width={24}
-              height={24}
-              source={{uri: user.avatar}}
-            />
-          </TouchableOpacity>
-        </Block>
       ),
     },
   };
