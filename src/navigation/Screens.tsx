@@ -4,6 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {Components, Home, Profile, Register, Pro, Branch, MenuPage} from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 import Cart from '../screens/Cart';
+import Customizable from '../screens/Customizable';
 
 const Stack = createStackNavigator();
 
@@ -43,6 +44,12 @@ export default () => {
         name="Profile"
         component={Profile}
         options={{headerShown: false}}
+      />
+
+      <Stack.Screen
+        name="Customizable"
+        component={Customizable}
+        options={{headerShown: true}}
       />
 
     <Stack.Screen

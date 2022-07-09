@@ -37,7 +37,10 @@ const Cart = () => {
           contentContainerStyle={{paddingBottom: sizes.l}}
           renderItem={({item}) => <Article {...item} />}
         />
-        <Button gradient={gradients.success} marginHorizontal={sizes.xl} marginVertical={sizes.xl} rounded={true} height={30} width={300}>
+        <Text style={{alignSelf: 'center'}} marginVertical={sizes.xs}>
+          Total Price:
+        </Text>
+        <Button gradient={gradients.success} style={{alignSelf: 'center'}} marginVertical={sizes.xl} rounded={true} height={30} width={300}>
             <Text white bold transform="uppercase">
               Place Order
             </Text>
