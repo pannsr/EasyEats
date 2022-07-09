@@ -17,13 +17,13 @@ export default () => {
       <Stack.Screen
         name="Home"
         component={Home}
-        options={{title: t('navigation.home')}}
+        options={screenOptions.home}
       />
 
       <Stack.Screen
         name="Branch"
         component={Branch}
-        options={screenOptions.branch}  
+        options={{title: t('navigation.branch')}}  
       />
 
       <Stack.Screen
@@ -31,14 +31,6 @@ export default () => {
         component={MenuPage}
         options={screenOptions.menu}  
       />  
-
-      <Stack.Screen
-        name="Components"
-        component={Components}
-        options={screenOptions.components}
-      />
-
-      <Stack.Screen name="Pro" component={Pro} options={screenOptions.pro} />
 
       <Stack.Screen
         name="Profile"
@@ -49,13 +41,13 @@ export default () => {
       <Stack.Screen
         name="Customizable"
         component={Customizable}
-        options={{headerShown: true}}
+        options={{title: t('navigation.customizable')}}
       />
 
     <Stack.Screen
         name="Cart"
         component={Cart}
-        options={screenOptions.cart}
+        options={{title: t('navigation.cart')}}
       />    
 
       <Stack.Screen
