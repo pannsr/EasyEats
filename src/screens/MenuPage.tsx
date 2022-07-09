@@ -59,7 +59,7 @@ const MenuPage = () => {
             })
           }
       >
-          <Image source={icons.menu}/>
+          <Image style={{width:60, height:60,}} source={icons.cart}/>
       </TouchableOpacity>
 
       {/* categories list */}

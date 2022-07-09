@@ -90,7 +90,8 @@
     "register": "Register",
     "login": "Login",
     "extra": "Automotive",
-    "shopping": "Shopping Cart"
+    "shopping": "Shopping Cart",
+    "QR": "Scan the QR code"
   },
   "menu": {
     "started": "Getting Started",
