@@ -42,14 +42,14 @@ export default () => {
       <Button onPress={() => navigation.goBack()}>
         <Image
           radius={0}
-          width={12}
-          height={20}
+          width={20}
+          height={30}
           source={icons.back}
         />
       </Button>
     ),
     headerRight: () => (
-      <Block row flex={0} align="center" marginRight={sizes.padding}>
+      <Block row flex={0} align='center' marginRight={sizes.xs}>
         {/* Profile icon in header */}
         <TouchableOpacity
           onPress={() =>
@@ -58,8 +58,8 @@ export default () => {
             })
           }>
           <Image
-          width={30}
-          height={30}
+          width={40}
+          height={40}
           source={icons.profile} 
           radius={1}/>
         </TouchableOpacity>
@@ -80,8 +80,8 @@ export default () => {
         <Button>
           <Image
             radius={0}
-            width={20}
-            height={20}
+            width={27}
+            height={27}
             color={colors.black}
             source={icons.home}
           />
@@ -101,8 +101,8 @@ export default () => {
         })}>
           <Image
             radius={0}
-            width={20}
-            height={20}
+            width={27}
+            height={27}
             color={colors.black}
             source={icons.home}
           />
