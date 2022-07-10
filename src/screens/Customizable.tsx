@@ -2,7 +2,7 @@ import React, {useCallback, useState} from 'react';
 
 import {useData, useTheme, useTranslation} from '../hooks';
 import {Block, Button, Image, Input, Product, Text} from '../components';
-import { TouchableOpacity, TextInput, View, ScrollView } from 'react-native';
+import { TouchableOpacity, TextInput, View, ScrollView, Keyboard, TouchableWithoutFeedback } from 'react-native';
 import { ICONS } from '../constants/theme';
 import { Searchbar } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
@@ -14,7 +14,7 @@ const Customizable = () => {
   const {mainRestaurants} = useData();
   const [products, setProducts] = useState(mainRestaurants);
   const {assets, colors, fonts, gradients, sizes, icons} = useTheme();
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   const [searchQuery, setSearchQuery] = React.useState('');
 
@@ -32,11 +32,12 @@ const Customizable = () => {
   }
   
   return (
-
-    <View
-      style={{flex:1, paddingTop:sizes.s, paddingHorizontal:sizes.padding}}
+    <TouchableOpacity
+      activeOpacity={1.0}
+      style={{flex:1, paddingTop:sizes.s, }}
+      onPress={()=>Keyboard.dismiss()}
     >
-      <View style={{flex: 1}}>
+      <View style={{flex: 1, paddingHorizontal:sizes.padding}}>
         <View style={{paddingVertical:10}}>
           <Text h5 style={{ paddingVertical:10, 
                             paddingHorizontal: 8,}}>
@@ -54,28 +55,28 @@ const Customizable = () => {
                       placeholder="Customize your dish" multiline />
         </View>
       </View>
-      <View style={{flex: 0.4, justifyContent: 'flex-end', alignItems: 'center'}}>
+      <View style={{backgroundColor:'white', borderRadius:20, flex: 0.3, justifyContent: 'flex-end', alignItems: 'center'}}>
         <View style={{width: '100%', flexDirection: 'row', justifyContent: 'space-evenly'}}>
-          <Button color='lightblue' onPress={decrease}>
-            <Text h4 bold>
+          <Button color='#47B9B6' onPress={decrease}>
+            <Text h4 bold color='white'>
               -
             </Text>
           </Button>
-          <Button color={colors.card}>
+          <Button color='#EBF1F7'>
             <Text p bold>
               {count}
             </Text>
           </Button>
-          <Button color='lightblue' onPress={increase}>
-            <Text h4 bold>
+          <Button color='#47B9B6' onPress={increase}>
+            <Text h4 bold color='white'>
               +
             </Text>
           </Button>
         </View>
         <View>
           <Button 
-              color='lightblue' 
-              marginVertical={sizes.md} 
+              color='#FC585D' 
+              marginVertical={sizes.m} 
               rounded={true} 
               height={30} width={300}
               onPress = {() => 
@@ -89,8 +90,7 @@ const Customizable = () => {
           </Button>
         </View>
       </View>
-      
-    </View>
+    </TouchableOpacity>
   );
 };
 

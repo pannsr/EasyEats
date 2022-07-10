@@ -10,7 +10,7 @@ import {THEME as commonTheme} from './theme';
 
 export const COLORS: ThemeColors = {
   // default text color
-  text: '#252F40',
+  text: '#000000',
 
   // base colors
   /** UI color for #primary */
@@ -43,7 +43,7 @@ export const COLORS: ThemeColors = {
 
   /** UI colors for navigation & card */
   card: '#FFFFFF',
-  background: '#E9ECEF',
+  background: '#EBF1F7',
 
   /** UI color for shadowColor */
   shadow: '#000000',
@@ -73,14 +73,14 @@ export const COLORS: ThemeColors = {
   blurTint: 'light',
 
   /** product link color */
-  link: '#CB0C9F',
+  link: '#FC585D',
 };
-
+//PANN AND TALAY #FC585D' : '#D1D8E0
 export const GRADIENTS: ThemeGradients = {
-  primary: ['#FF0080', '#7928CA'],
+  primary: ['#FDB6B9', '#FAE3D9'],
   secondary: ['#A8B8D8', '#627594'],
   info: ['#21D4FD', '#2152FF'],
-  success: ['#98EC2D', '#17AD37'],
+  success: ['#47B9B6', '#47B9B6'],
   warning: ['#FBCF33', '#F53939'],
   danger: ['#FF667C', '#EA0606'],
 

@@ -29,7 +29,7 @@ const Article = ({
                   navigation.navigate('Screens', {
                     screen: 'Customizable'
                 })}
-                gradient={gradients.info} height={30} width={30}>
+                color={'#FC585D'} height={30} width={30}>
                 <Text white bold>
                   x{foodQuantity}
                 </Text>
@@ -40,7 +40,7 @@ const Article = ({
               {foodTitle && (
                 <Text
                   style={{flex:100}}
-                  p>
+                  p bold>
                   {foodTitle}
                 </Text>
               )}
