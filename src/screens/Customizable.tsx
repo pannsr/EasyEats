@@ -2,7 +2,7 @@ import React, {useCallback, useState} from 'react';
 
 import {useData, useTheme, useTranslation} from '../hooks';
 import {Block, Button, Image, Input, Product, Text} from '../components';
-import { TouchableOpacity, TextInput } from 'react-native';
+import { TouchableOpacity, TextInput, View, ScrollView } from 'react-native';
 import { ICONS } from '../constants/theme';
 import { Searchbar } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
@@ -14,43 +14,83 @@ const Customizable = () => {
   const {mainRestaurants} = useData();
   const [products, setProducts] = useState(mainRestaurants);
   const {assets, colors, fonts, gradients, sizes, icons} = useTheme();
+  const [count, setCount] = useState(0);
 
   const [searchQuery, setSearchQuery] = React.useState('');
 
   const onChangeSearch = (query: React.SetStateAction<string>) => setSearchQuery(query);
+
+  const increase = () => {
+    setCount(count => count + 1);
+  };
+
+  const decrease = () => {
+    if(count > 0){
+      setCount(count => count - 1);
+    }
+    
+  }
   
   return (
-    <Block
-      color={colors.card}
-      paddingTop={sizes.m}
-      paddingHorizontal={sizes.padding}>
-      <Block>
-        <TextInput style={{borderColor: colors.gray, 
-                          borderWidth:1, 
-                          borderRadius: 8, 
-                          paddingVertical:10, 
-                          paddingHorizontal: 8,
-                          fontSize: 18}} 
-                    placeholder="Customize your dish" multiline />
-      </Block>
-      <Block style={{justifyContent: 'flex-end', alignItems: 'center'}}>
-        <Button 
-            gradient={gradients.success} 
-            marginVertical={sizes.xl} 
-            rounded={true} 
-            height={30} width={300}
-            onPress = {() => 
-              navigation.navigate('Screens', {
-                screen: 'Cart'
-            })}
-            >
-                <Text white bold transform="uppercase">
-                  Place Order
-                </Text>
-        </Button>
-      </Block>
+
+    <View
+      style={{flex:1, paddingTop:sizes.s, paddingHorizontal:sizes.padding}}
+    >
+      <View style={{flex: 1}}>
+        <View style={{paddingVertical:10}}>
+          <Text h5 style={{ paddingVertical:10, 
+                            paddingHorizontal: 8,}}>
+            The restaurant would give you options here on how to customize your food.
+          </Text>
+        </View>
+        <View >
+          <TextInput style={{backgroundColor:colors.card,
+                            borderColor: colors.gray, 
+                            borderWidth:1, 
+                            borderRadius: 8, 
+                            paddingVertical:10, 
+                            paddingHorizontal: 8,
+                            fontSize: 16}} 
+                      placeholder="Customize your dish" multiline />
+        </View>
+      </View>
+      <View style={{flex: 0.4, justifyContent: 'flex-end', alignItems: 'center'}}>
+        <View style={{width: '100%', flexDirection: 'row', justifyContent: 'space-evenly'}}>
+          <Button color='lightblue' onPress={decrease}>
+            <Text h4 bold>
+              -
+            </Text>
+          </Button>
+          <Button color={colors.card}>
+            <Text p bold>
+              {count}
+            </Text>
+          </Button>
+          <Button color='lightblue' onPress={increase}>
+            <Text h4 bold>
+              +
+            </Text>
+          </Button>
+        </View>
+        <View>
+          <Button 
+              color='lightblue' 
+              marginVertical={sizes.md} 
+              rounded={true} 
+              height={30} width={300}
+              onPress = {() => 
+                navigation.navigate('Screens', {
+                  screen: 'MenuPage'
+              })}
+              >
+                  <Text white bold transform="uppercase">
+                    Place Order
+                  </Text>
+          </Button>
+        </View>
+      </View>
       
-    </Block>
+    </View>
   );
 };
 
