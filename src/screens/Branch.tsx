@@ -1,5 +1,5 @@
 import React, {useCallback, useState} from 'react';
-import {FlatList} from 'react-native';
+import {FlatList, View} from 'react-native';
 
 import {useData, useTheme, useTranslation} from '../hooks/';
 import {Block, Button, Image, Input, BranchComponent, Modal, Text} from '../components/';
@@ -27,14 +27,13 @@ const Branch = () => {
         scroll
         paddingHorizontal={sizes.padding}
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{paddingBottom: sizes.l}}>
+        contentContainerStyle={{flex: 1, paddingBottom: sizes.m}}>
           <Block>
-            <Text h4 marginVertical={sizes.s} marginTop={sizes.sm}>
+            <Text h5 marginTop={sizes.m}>
               Choose a branch for this restaurant
             </Text>
             <Button
-                marginTop={sizes.xs}
-                flex={1}
+                flex={0.25}
                 row
                 gradient={gradients.dark}
                 onPress={() => setModal(true)}>
@@ -55,12 +54,11 @@ const Branch = () => {
             </Button>
 
             {/* table input number */}
-            <Text h4 marginVertical={sizes.s} marginTop={sizes.l}>
+            <Text h5 marginTop={sizes.m}>
               Input your table number
             </Text>
             <Button
-                marginTop={sizes.xs}
-                flex={1}
+                flex={0.25}
                 row
                 gradient={gradients.dark}
                 onPress={() => setModalTable(true)}>
@@ -84,7 +82,7 @@ const Branch = () => {
             <Button 
             onPress={() => navigation.navigate('Screens', {screen: 'MenuPage'})}
             gradient={gradients.success} 
-            marginVertical={sizes.xl} 
+            marginVertical={sizes.s} 
             rounded={true} 
             height={30} width={300}>
                 <Text white bold transform="uppercase">
