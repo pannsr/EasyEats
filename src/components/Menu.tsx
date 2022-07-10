@@ -48,7 +48,7 @@ const Menu = ({image, price, title, type, linkLabel, description, timestamp}: IM
         </Text>
 
         <Text marginTop={sizes.xs}>
-          {price} THB
+          ฿{price}
         </Text>
 
         {/* Add to order (Text and arrow) */}
