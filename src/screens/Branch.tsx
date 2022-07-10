@@ -35,7 +35,7 @@ const Branch = () => {
             <Button
                 flex={0.25}
                 row
-                gradient={gradients.dark}
+                gradient={gradients.success}
                 onPress={() => setModal(true)}>
                 <Block
                   row
@@ -60,7 +60,7 @@ const Branch = () => {
             <Button
                 flex={0.25}
                 row
-                gradient={gradients.dark}
+                gradient={gradients.success}
                 onPress={() => setModalTable(true)}>
                 <Block
                   row
@@ -81,7 +81,7 @@ const Branch = () => {
           <Block style={{justifyContent: 'flex-end', alignItems: 'center'}}>
             <Button 
             onPress={() => navigation.navigate('Screens', {screen: 'MenuPage'})}
-            gradient={gradients.success} 
+            color={'#FC585D'} 
             marginVertical={sizes.s} 
             rounded={true} 
             height={30} width={300}>

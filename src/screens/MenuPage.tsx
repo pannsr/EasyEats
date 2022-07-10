@@ -38,6 +38,9 @@ const MenuPage = () => {
   return (
     <Block>
       {/* Floating Cart Button */}
+      
+
+      {/* Floating Cart Button */}
       <TouchableOpacity
           style={{
             borderWidth: 2,
@@ -62,6 +65,30 @@ const MenuPage = () => {
           <Image style={{width:60, height:60, right: 2}} source={icons.cart}/>
       </TouchableOpacity>
 
+      <TouchableOpacity
+          style={{
+            borderWidth: 2,
+            borderColor: 'rgba(0,0,0,10)',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: 30,
+            position: 'absolute',
+            bottom: 80,
+            right: 50,
+            height: 30,
+            backgroundColor: '#FC585D',
+            borderRadius: 100,
+            zIndex: 2
+          }}
+          onPress={() =>
+            navigation.navigate('Screens', {
+              screen: 'Cart',
+            })
+          }
+      >
+        <Text bold p color='white'>1</Text>
+      </TouchableOpacity>
+
       {/* categories list */}
       <Block color={colors.card} row flex={0} paddingVertical={sizes.padding}>
         <Block
@@ -78,7 +105,7 @@ const MenuPage = () => {
                 marginHorizontal={sizes.s}
                 key={`category-${category?.id}}`}
                 onPress={() => setSelected(category)}
-                gradient={gradients?.[isSelected ? 'primary' : 'light']}>
+                color={isSelected ? '#FC585D' : '#D5E6F0'}>
                 <Text
                   p
                   bold={isSelected}
