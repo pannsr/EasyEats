@@ -1,6 +1,6 @@
 import React from 'react';
 import dayjs from 'dayjs';
-import {TouchableOpacity, TouchableWithoutFeedback} from 'react-native';
+import {TouchableOpacity, TouchableWithoutFeedback, View} from 'react-native';
 
 import Text from './Text';
 import Block from './Block';
@@ -22,38 +22,38 @@ const Article = ({
 
     return (
       <TouchableWithoutFeedback onPress={onPress}>
-        <Block card padding={sizes.sm} marginTop={sizes.sm}>
-          {/* article description */}
-          {foodTitle && (
-            <Text
-              p
-              marginTop={sizes.s}
-              marginLeft={sizes.xs}
-              marginBottom={sizes.sm}>
-              {foodTitle}
+        <Block card marginTop={sizes.sm} style={{flexDirection:'row'}}>
+            <View style={{flex: 1, justifyContent:'center'}}>
+              <Button
+                onPress = {() => 
+                  navigation.navigate('Screens', {
+                    screen: 'Customizable'
+                })}
+                gradient={gradients.info} height={30} width={30}>
+                <Text white bold>
+                  x{foodQuantity}
+                </Text>
+              </Button>
+            </View>
+            <View style={{paddingVertical: 10, flex: 5, flexDirection:'column', justifyContent:'space-between', alignItems:'center'}}>
+            <View style={{flex: 3, flexDirection:'row', justifyContent:'space-between', alignItems:'center', paddingHorizontal:10}}>
+              {foodTitle && (
+                <Text
+                  style={{flex:100}}
+                  p>
+                  {foodTitle}
+                </Text>
+              )}
+
+            {/* food price */}
+            {price && (
+            <Text>
+              ฿{price.toString()}
             </Text>
           )}
-          {price && (
-            <Text
-              p
-              marginTop={sizes.xs}
-              marginLeft={sizes.xs}
-              marginBottom={sizes.xs}>
-              {price.toString()} THB
-            </Text>
-          )}
-          <Button
-              onPress = {() => 
-                navigation.navigate('Screens', {
-                  screen: 'Customizable'
-              })}
-              gradient={gradients.success} height={30} width={30} position="absolute" right={10} top={8}>
-            <Text white bold>
-              x{foodQuantity}
-            </Text>
-          </Button>
-          {/* Edit button */}
-          <TouchableOpacity 
+            </View>
+              {/* Edit button */}
+          <TouchableOpacity style={{ alignSelf:'flex-start', paddingHorizontal:10}}
           onPress = {() => 
             navigation.navigate('Screens', {
               screen: 'Customizable'
@@ -71,6 +71,11 @@ const Article = ({
               {linkLabel || t('common.edit')}
             </Text >
           </TouchableOpacity>
+            </View>
+
+          
+          
+          
         </Block>
       </TouchableWithoutFeedback>
     );
