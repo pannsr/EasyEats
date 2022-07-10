@@ -38,22 +38,28 @@ const Cart = () => {
       renderItem={({item}) => <Article {...item} />}
       ListFooterComponentStyle={{justifyContent: 'center', paddingTop: sizes.sm}}
       ListFooterComponent={
-      <Block card style={{height: 'auto', flexDirection: 'row'}}>
-        <View style={{flex: 1, justifyContent: 'center', paddingLeft: 20}}>
-          <Text>
-            Chicken wings{"\n"}
-            Water{"\n"}
-            Salad
-          </Text>
+      <Block card style={{height: 'auto'}}>
+        <View style={{flexDirection:'column', flex:1}}>
+          <Text p bold paddingHorizontal={20}>Order Summary</Text>
         </View>
-        <View style={{flex: 1, justifyContent: 'center', alignItems:'flex-end', paddingRight: 20}}>
-          <Text>
-            ฿100{"\n"}
-            ฿20{"\n"}
-            ฿80
-          </Text>
+        <View style={{flexDirection:'row', flex: 1}}>
+          <View style={{flex: 1, justifyContent: 'center', paddingLeft: 20}}>
+            <Text>
+              Chicken wings{"\n"}
+              Water{"\n"}
+              Salad
+            </Text>
+          </View>
+          <View style={{flex: 1, justifyContent: 'center', alignItems:'flex-end', paddingRight: 20}}>
+            <Text>
+              ฿100{"\n"}
+              ฿20{"\n"}
+              ฿80
+            </Text>
+          </View>
         </View>
       </Block>
+      
       }
     />
     <View style={{backgroundColor:'white', borderRadius: 20, justifyContent: 'center', alignItems: 'center', flex: 1, flexDirection:'column'}}>
