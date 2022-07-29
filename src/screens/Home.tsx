@@ -22,6 +22,8 @@ const Home = () => {
     <Block>
       {/* search input */}
        <Searchbar
+        placeholderTextColor='#666666'
+        iconColor='#666666'
         placeholder="Search"
         onChangeText={onChangeSearch}
         value={searchQuery}

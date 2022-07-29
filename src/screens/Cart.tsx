@@ -68,7 +68,7 @@ const Cart = () => {
         <Text h4 marginRight={30}>฿200</Text> 
       </View>
       <View style={{flex:1, justifyContent:'flex-start'}}>
-      <Button gradient={gradients.info} rounded={true} height={30} width={300} style={{justifyContent:'center'}}>
+      <Button color={'#FC585D'} rounded={true} height={30} width={300} style={{justifyContent:'center'}}>
             <Text p white bold transform="uppercase">
               Place Order
             </Text>
