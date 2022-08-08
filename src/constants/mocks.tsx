@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import { timezone } from 'expo-localization';
+import axios from 'axios';
 import {
   IBlock,
   IArticleOptions,
@@ -12,7 +13,12 @@ import {
   IRestaurant,
   IUser,
   IMenu,
+  IOrderItem,
 } from './types';
+// import { useEffect, useState } from 'react';
+// import restaurantApi from './restaurantAPI';
+// const { rest } = restaurantApi();
+// console.log('rest', rest)
 
 // users
 export const USERS: IUser[] = [
@@ -86,56 +92,124 @@ export const USERS: IUser[] = [
 
 export const BRANCHES: IBranch[] = [
   {
-    id: 1,
-    title: 'Sukhumvit Branch',
-    description: 'Best branch for good food',
+    branch_id: '1',
+    restaurant_id: '1',
+    
+    branchname: 'Sukhumvit Branch',
+    location: 'Best branch for good food',
     type: 'vertical',
     numTable: 20
   },
   {
-    id: 2,
-    title: 'Viphavadhi Branch',
-    description: 'Best branch for good view',
+    branch_id: '2',
+    restaurant_id: '1',
+    
+    branchname: 'Viphavadhi Branch',
+    location: 'Best branch for good view',
     type: 'vertical',
     numTable: 15
   },
   {
-    id: 3,
-    title: 'Bangna Branch',
-    description: 'Best branch for good service',
+    branch_id: '1',
+    restaurant_id: '2',
+    branchname: 'Bangna Branch',
+    location: 'Best branch for good service',
     type: 'vertical',
     numTable: 6
   }
 ]
 
-// main restaurants cards
-export const MAIN_RESTAURANTS: IRestaurant[] = [
+// // const [data, setData] = useState([]);
+
+// // const getMovies = async () => {
+// //   try {
+// //    const response = await fetch('http://localhost:5000/rest');
+// //    const json = await response.json();
+// //    setData(json);
+// //    console.log('data', data);
+// //  } catch (error) {
+// //    console.error(error);
+// //  }
+// // }
+// // useEffect(() => {
+// //   getMovies();
+// // }, []);
+
+// // const getRestaurantsFromApi = () => {
+// //   return fetch('http://localhost:5000/rest')
+// //     .then((response) => {return response.json()})
+// //     .catch((error) => {
+// //       console.error(error);
+// //     });
+// // };
+
+// // const fetchData =   return fetch("http://localhost:5000/rest").then((response) => {return response.json()});
+
+// // export function printAddress() {
+// //   return fetchData.then((a) => {
+// //     console.log('a', temp);
+// //     return temp;
+// //   });
+// // };
+// // main restaurants cards
+
+// // const Test = () => {
+// //   const [rest, setRest] = useState<IRestaurant[]>([]);
+// //   useEffect(()=> {
+// //     axios.get("http://localhost:5000/rest").then(res => {setRest(res.data)});
+// //   });
+// //   console.log("Hi", rest);
+// //    return rest;
+// //   // main restaurants cards
+// // }
+// // const MAIN_RESTAURANTS = Test();
+// // console.log("hello", MAIN_RESTAURANTS);
+
+// const getMAIN_RESTAURANTS = () => {
+  // const [rests, setRests] = useState([])
+  // const fetchData = () => {
+  //     fetch("https://localhost:5000/rest")
+  //     .then(response => {
+  //       console.log('hi',response);
+  //       return response.json()
+  //     })
+      // .then(data => {
+      //   setRests(data)
+      //   console.log('hi', rests)
+      // })
+  // }
+  // fetchData();
+  // return rests;
+// }
+
+export const MAIN_RESTAURANTS: IRestaurant[] = //rest;
+[
   {
-    id: 1,
+    restaurant_id: '1',
     type: 'horizontal',
-    title: 'Hachiban Ramen',
-    image:
+    restaurantname: 'Hachiban Ramen',
+    imageurl:
       'https://d1sag4ddilekf6.azureedge.net/compressed/merchants/3-C2TGFFWWTKVAC6/hero/e6274f90fec14f85826f4aed91f41f47_1645981740553211506.png',
   },
   {
-    id: 2,
+    restaurant_id: '2',
     type: 'horizontal',
-    title: 'Yoshinoya',
-    image:
+    restaurantname: 'Yoshinoya',
+    imageurl:
       'https://upload.wikimedia.org/wikipedia/id/3/3d/Yoshinoya_logo.jpg',
   },
   {
-    id: 3,
+    restaurant_id: '3',
     type: 'horizontal',
-    title: 'Pepper Lunch',
-    image:
+    restaurantname: 'Pepper Lunch',
+    imageurl:
       'https://www.centralparkjakarta.com/wp-content/uploads/2017/10/pepper-lunc.jpg',
   },
   {
-    id: 4,
+    restaurant_id: '4',
     type: 'horizontal',
-    title: 'Santa Fé Steak',
-    image:
+    restaurantname: 'Santa Fé Steak',
+    imageurl:
       'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
   }
 ];
@@ -148,88 +222,97 @@ export const CATEGORIES: ICategory[] = [
   {id: 4, name: 'Drinks'},
 ];
 
-// main restaurants cards
+// // main restaurants cards
 export const MENUS: IMenu[] = [
   {
-    id: 1,
+    menuitem_id: '1',
     type: 'vertical',
-    title: 'Appetizer 1',
-    category: CATEGORIES[0],
-    image:
+    menuitemname: 'Appetizer 1',
+    menucategory: CATEGORIES[0],
+    imageurl:
       'https://d1sag4ddilekf6.azureedge.net/compressed/merchants/3-C2TGFFWWTKVAC6/hero/e6274f90fec14f85826f4aed91f41f47_1645981740553211506.png',
-    price: 500
+    price: 500,
+    restaurant_id: '1'
   },
   {
-    id: 2,
+    menuitem_id: '2',
     type: 'vertical',
-    title: 'Appetizer 2',
-    category: CATEGORIES[0],
-    image:
+    menuitemname: 'Appetizer 2',
+    menucategory: CATEGORIES[0],
+    imageurl:
       'https://upload.wikimedia.org/wikipedia/id/3/3d/Yoshinoya_logo.jpg',
     price: 250,
+    restaurant_id: '1'
   },
   {
-    id: 3,
+    menuitem_id: '3',
     type: 'vertical',
-    title: 'Appetizer 3',
-    category: CATEGORIES[0],
-    image:
+    menuitemname: 'Appetizer 3',
+    menucategory: CATEGORIES[0],
+    imageurl:
       'https://www.centralparkjakarta.com/wp-content/uploads/2017/10/pepper-lunc.jpg',
     price: 20,
+    restaurant_id: '1'
   },
   {
-    id: 4,
+    menuitem_id: '4',
     type: 'vertical',
-    title: 'Appetizer 4',
-    category: CATEGORIES[0],
-    image:
+    menuitemname: 'Appetizer 4',
+    menucategory: CATEGORIES[0],
+    imageurl:
       'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
     price: 300,
+    restaurant_id: '1'
   },
   {
-    id: 5,
+    menuitem_id: '5',
     type: 'vertical',
-    title: 'Appetizer 5',
-    category: CATEGORIES[0],
-    image:
+    menuitemname: 'Appetizer 5',
+    menucategory: CATEGORIES[0],
+    imageurl:
       'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
     price: 320,
+    restaurant_id: '1'
   },
   {
-    id: 6,
+    menuitem_id: '6',
     type: 'vertical',
-    title: 'Main 1',
-    category: CATEGORIES[1],
-    image:
+    menuitemname: 'Main 1',
+    menucategory: CATEGORIES[1],
+    imageurl:
       'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
     price: 370,
+    restaurant_id: '1'
   },
   {
-    id: 7,
+    menuitem_id: '7',
     type: 'vertical',
-    title: 'Main 2',
-    category: CATEGORIES[1],
-    image:
+    menuitemname: 'Main 2',
+    menucategory: CATEGORIES[1],
+    imageurl:
       'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
     price: 100,
+    restaurant_id: '2'
   },
   {
-    id: 8,
+    menuitem_id: '8',
     type: 'vertical',
-    title: 'Dessert 1',
-    category: CATEGORIES[2],
-    image:
+    menuitemname: 'Dessert 1',
+    menucategory: CATEGORIES[2],
+    imageurl:
       'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
     price: 30,
+    restaurant_id: '3'
   },
   {
-    id: 9,
+    menuitem_id: '9',
     type: 'vertical',
-    title: 'Drink 1',
-    category: CATEGORIES[3],
-    image:
+    menuitemname: 'Drink 1',
+    menucategory: CATEGORIES[3],
+    imageurl:
       'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
     price: 500,
+    restaurant_id: '1'
   }
 ];
 
@@ -277,36 +360,36 @@ export const ARTICLE_OPTIONS: IArticleOptions[] = [
 ];
 
 // offers
-export const OFFERS: IRestaurant[] = [
-  {
-    id: 1,
-    type: 'vertical',
-    title: 'Unique activities with local experts.',
-    image:
-      'https://images.unsplash.com/photo-1604998103924-89e012e5265a?fit=crop&w=450&q=80',
-  },
-  {
-    id: 2,
-    type: 'vertical',
-    title: 'The highest status people.',
-    image:
-      'https://images.unsplash.com/photo-1563492065599-3520f775eeed?fit=crop&w=450&q=80',
-  },
-  {
-    id: 3,
-    type: 'vertical',
-    title: 'Get more followers and grow.',
-    image:
-      'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?fit=crop&w=450&q=80',
-  },
-  {
-    id: 4,
-    type: 'vertical',
-    title: 'New ways to meet your business goals.',
-    image:
-      'https://images.unsplash.com/photo-1497215728101-856f4ea42174?fit=crop&w=450&q=80',
-  },
-];
+// export const OFFERS: IRestaurant[] = [
+//   {
+//     id: 1,
+//     type: 'vertical',
+//     title: 'Unique activities with local experts.',
+//     image:
+//       'https://images.unsplash.com/photo-1604998103924-89e012e5265a?fit=crop&w=450&q=80',
+//   },
+//   {
+//     id: 2,
+//     type: 'vertical',
+//     title: 'The highest status people.',
+//     image:
+//       'https://images.unsplash.com/photo-1563492065599-3520f775eeed?fit=crop&w=450&q=80',
+//   },
+//   {
+//     id: 3,
+//     type: 'vertical',
+//     title: 'Get more followers and grow.',
+//     image:
+//       'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?fit=crop&w=450&q=80',
+//   },
+//   {
+//     id: 4,
+//     type: 'vertical',
+//     title: 'New ways to meet your business goals.',
+//     image:
+//       'https://images.unsplash.com/photo-1497215728101-856f4ea42174?fit=crop&w=450&q=80',
+//   },
+// ];
 
 // rental locations
 export const LOCATIONS: ILocation[] = [
@@ -316,26 +399,26 @@ export const LOCATIONS: ILocation[] = [
 ];
 
 // articles
-export const ARTICLES: IBlock[] = [
-  {
-    id: 1,
-    foodTitle: 'Food 1',
-    foodQuantity: 2,
-    price: 500,
-  }, 
-  {
-    id: 2,
-    foodTitle: 'Food 2',
-    foodQuantity: 3,
-    price: 250,
-  }, 
-  {
-    id: 3,
-    foodTitle: 'Food 2',
-    foodQuantity: 1,
-    price: 20,
-  },
-];
+export const ORDER_ITEM: IOrderItem[] = []
+//   {
+//     id: 1,
+//     foodTitle: 'Food 1',
+//     foodQuantity: 2,
+//     price: 500,
+//   }, 
+//   {
+//     id: 2,
+//     foodTitle: 'Food 2',
+//     foodQuantity: 3,
+//     price: 250,
+//   }, 
+//   {
+//     id: 3,
+//     foodTitle: 'Food 2',
+//     foodQuantity: 1,
+//     price: 20,
+//   },
+// ];
 
 // chat messages
 export const MESSSAGES = [
@@ -587,7 +670,7 @@ export default {
   BRANCHES,
   MAIN_RESTAURANTS,
   CATEGORIES,
-  ARTICLES,
+  ORDER_ITEM,
   MESSSAGES,
   EXTRAS,
   NOTIFICATIONS,
