@@ -240,7 +240,8 @@ export const MENUS: IMenu[] = [
     menuitemname: 'Appetizer 2',
     menucategory: CATEGORIES[0],
     imageurl:
-      'https://upload.wikimedia.org/wikipedia/id/3/3d/Yoshinoya_logo.jpg',
+      'https://d1sag4ddilekf6.azureedge.net/compressed/merchants/3-C2TGFFWWTKVAC6/hero/e6274f90fec14f85826f4aed91f41f47_1645981740553211506.png',
+      //https://upload.wikimedia.org/wikipedia/id/3/3d/Yoshinoya_logo.jpg',
     price: 250,
     restaurant_id: '1'
   },
@@ -250,7 +251,8 @@ export const MENUS: IMenu[] = [
     menuitemname: 'Appetizer 3',
     menucategory: CATEGORIES[0],
     imageurl:
-      'https://www.centralparkjakarta.com/wp-content/uploads/2017/10/pepper-lunc.jpg',
+      'https://d1sag4ddilekf6.azureedge.net/compressed/merchants/3-C2TGFFWWTKVAC6/hero/e6274f90fec14f85826f4aed91f41f47_1645981740553211506.png',
+      // https://www.centralparkjakarta.com/wp-content/uploads/2017/10/pepper-lunc.jpg',
     price: 20,
     restaurant_id: '1'
   },
@@ -260,7 +262,8 @@ export const MENUS: IMenu[] = [
     menuitemname: 'Appetizer 4',
     menucategory: CATEGORIES[0],
     imageurl:
-      'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+      'https://d1sag4ddilekf6.azureedge.net/compressed/merchants/3-C2TGFFWWTKVAC6/hero/e6274f90fec14f85826f4aed91f41f47_1645981740553211506.png',
+      // https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
     price: 300,
     restaurant_id: '1'
   },
@@ -270,7 +273,8 @@ export const MENUS: IMenu[] = [
     menuitemname: 'Appetizer 5',
     menucategory: CATEGORIES[0],
     imageurl:
-      'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+      'https://d1sag4ddilekf6.azureedge.net/compressed/merchants/3-C2TGFFWWTKVAC6/hero/e6274f90fec14f85826f4aed91f41f47_1645981740553211506.png',
+      // https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
     price: 320,
     restaurant_id: '1'
   },
@@ -280,7 +284,8 @@ export const MENUS: IMenu[] = [
     menuitemname: 'Main 1',
     menucategory: CATEGORIES[1],
     imageurl:
-      'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+      'https://d1sag4ddilekf6.azureedge.net/compressed/merchants/3-C2TGFFWWTKVAC6/hero/e6274f90fec14f85826f4aed91f41f47_1645981740553211506.png',
+      // https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
     price: 370,
     restaurant_id: '1'
   },
@@ -290,7 +295,8 @@ export const MENUS: IMenu[] = [
     menuitemname: 'Main 2',
     menucategory: CATEGORIES[1],
     imageurl:
-      'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+      'https://upload.wikimedia.org/wikipedia/id/3/3d/Yoshinoya_logo.jpg',
+      // https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
     price: 100,
     restaurant_id: '2'
   },
@@ -300,7 +306,8 @@ export const MENUS: IMenu[] = [
     menuitemname: 'Dessert 1',
     menucategory: CATEGORIES[2],
     imageurl:
-      'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+      'https://www.centralparkjakarta.com/wp-content/uploads/2017/10/pepper-lunc.jpg',
+      // https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
     price: 30,
     restaurant_id: '3'
   },
@@ -310,7 +317,8 @@ export const MENUS: IMenu[] = [
     menuitemname: 'Drink 1',
     menucategory: CATEGORIES[3],
     imageurl:
-      'https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
+      'https://d1sag4ddilekf6.azureedge.net/compressed/merchants/3-C2TGFFWWTKVAC6/hero/e6274f90fec14f85826f4aed91f41f47_1645981740553211506.png',
+      // https://article.redprice.co/wp-content/uploads/2017/10/blog.jpg',
     price: 500,
     restaurant_id: '1'
   }
