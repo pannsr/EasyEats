@@ -16,6 +16,9 @@ const MenuPage = ( { route } : {route: any}) => {
   const {colors, gradients, sizes, icons} = useTheme();
   const {selectedRestaurant, selectedBranch, tableNumber, basket} = route.params;
   console.log('menupage', basket)
+  const restaurantData = data.menus.filter((menu)=>{
+    return menu.restaurant_id === selectedRestaurant
+  })
 
   var amountInCart = 0
   for (let i = 0; i < basket.length; i++) {
@@ -47,7 +50,7 @@ const MenuPage = ( { route } : {route: any}) => {
   // init articles
   useEffect(() => {
     // THIS sets what articles (specific text and image) it displays
-    setMenus(data?.menus);
+    setMenus(restaurantData);
     setCategories(data?.categories);
     setSelected(data?.categories[0]);
   }, [data.menus, data.categories]);
@@ -58,7 +61,7 @@ const MenuPage = ( { route } : {route: any}) => {
       (category) => category?.id === selected?.id,
     );
 
-    const newMenus = data?.menus?.filter(
+    const newMenus = restaurantData.filter(
       (menu) => menu?.menucategory?.id === category?.id,
     );
 

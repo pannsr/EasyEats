@@ -35,12 +35,11 @@ const OrderItem = (props:any) => {
       <TouchableWithoutFeedback>
         <Block card marginTop={sizes.sm} style={{flexDirection:'row'}}>
             <View style={{flex: 1, justifyContent:'center'}}>
-              <Button
-                color={'#FC585D'} height={30} width={30}>
+              <View style={{backgroundColor: '#FC585D', height: 45, width: 45, borderRadius: 5, alignItems: 'center', justifyContent:'center'}}>
                 <Text white bold>
                   x{quantity}
                 </Text>
-              </Button>
+              </View>
             </View>
             <View style={{paddingVertical: 10, flex: 5, flexDirection:'column', justifyContent:'space-between', alignItems:'center'}}>
             <View style={{flex: 3, flexDirection:'row', justifyContent:'space-between', alignItems:'center', paddingHorizontal:10}}>
